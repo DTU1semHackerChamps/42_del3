@@ -7,7 +7,7 @@ public class Main {
     //EMIL
     //Christoffer
     //Magnus
-
+    //Stig
     // Mads
     // Zahed
 }

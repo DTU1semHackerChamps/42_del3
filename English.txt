@@ -1,0 +1,48 @@
+rollScreenMessage
+Press ROLL to roll the dice
+rollButton
+ROLL
+startButtonMessage
+Press PLAY to play or EXIT to exit
+startTrueButton
+PLAY
+startFalseButton
+EXIT
+winScreenMessage
+You have won the game! Press 'RESTART' or 'EXIT'
+winTrueButton
+RESTART
+winFalseButton
+EXIT
+tileText1
+You have traveled far and wide, welcome back home.
+tileText2
+You caught the big fish in the lake! Your have won 250
+tileText3
+Take it easy! You loss 100
+tileText4
+AAA HU, was that what you were looking for? You have won 100
+tileText5
+Don't give up, still something out of nothing! You have lost 20
+tileText6
+How was that? You have won a gold seal, save it for next. You have won 180
+tileText7
+Keep testing your luck! You have won 0
+tileText8
+Don't move! Santa is coming with the socks. You have lost 70
+tileText9
+Be the real hunter! You have won 60
+tileText10
+Better luck for the next turn! You have won an extra turn, though lost 80
+tileText11
+The sun rises after the darkest! You have lost 50
+tileText12
+You have won black diamond in the jungle, sell it for 650, make you self reach. You have won 650
+playerTurn
+it is your turn. Press ROLL to roll.
+playerWin
+has won!
+typeName1
+Please type your name player 1.
+typeName2
+Please type your name player 2.

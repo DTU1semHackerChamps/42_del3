@@ -1,0 +1,4 @@
+winMessasge
+Du har vundet!
+rollMessasge
+Tryk OK for at kaste terningerne

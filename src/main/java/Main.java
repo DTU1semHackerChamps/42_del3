@@ -6,7 +6,7 @@ public class Main {
     }
     //EMIL
     //Christoffer
-
+    //Magnus
 
     // Mads
 }

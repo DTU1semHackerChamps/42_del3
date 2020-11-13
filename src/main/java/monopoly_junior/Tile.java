@@ -64,30 +64,30 @@ public class Tile {
         Tile strandpromenaden = new Tile ("STRANDPROMENADEN",-5);
         //
 
-        tiles[1] = start;
-        tiles[2] = burgerbaren;
-        tiles[3] = pizzeriaet;
-        tiles[4] = chanceKort1;
-        tiles[5] = slikbutikken;
-        tiles[6] = iskiosken;
-        tiles[7] = visitPrison;
-        tiles[8] = museet;
-        tiles[9] = biblioteket;
-        tiles[10] = chanceKort2;
-        tiles[11] = skaterparken;
-        tiles[12] = swimmingpoolen;
-        tiles[13] = gratisParking;
-        tiles[14] = spillehallen;
-        tiles[15] = biografen;
-        tiles[16] = chanceKort3;
-        tiles[17] = legtøjsbutikken;
-        tiles[18] = dyrehandlen;
-        tiles[19] = gaaIFængsel;
-        tiles[20] = bowlinghallen;
-        tiles[21] = zoo;
-        tiles[22] = chanceKort4;
-        tiles[23] = vandlandet;
-        tiles[24] = strandpromenaden;
+        tiles[0] = start;
+        tiles[1] = burgerbaren;
+        tiles[2] = pizzeriaet;
+        tiles[3] = chanceKort1;
+        tiles[4] = slikbutikken;
+        tiles[5] = iskiosken;
+        tiles[6] = visitPrison;
+        tiles[7] = museet;
+        tiles[8] = biblioteket;
+        tiles[9] = chanceKort2;
+        tiles[10] = skaterparken;
+        tiles[11] = swimmingpoolen;
+        tiles[12] = gratisParking;
+        tiles[13] = spillehallen;
+        tiles[14] = biografen;
+        tiles[15] = chanceKort3;
+        tiles[16] = legtøjsbutikken;
+        tiles[17] = dyrehandlen;
+        tiles[18] = gaaIFængsel;
+        tiles[19] = bowlinghallen;
+        tiles[20] = zoo;
+        tiles[21] = chanceKort4;
+        tiles[22] = vandlandet;
+        tiles[23] = strandpromenaden;
 
 
         return tiles;

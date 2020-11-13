@@ -1,3 +1,5 @@
+package monopoly_junior;
+
 import java.io.*;
 import java.io.BufferedReader;
 import java.nio.file.Path;

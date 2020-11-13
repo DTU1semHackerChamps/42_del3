@@ -1,3 +1,5 @@
+package monopoly_junior;
+
 public class Player {
     private int balance;
     private int position;

@@ -8,17 +8,15 @@ public class Tile {
      */
     private int balanceChange;
 
-
     private String tileName;
+
+
     public Tile(String name,int balanceChange)
     {
         this.balanceChange = balanceChange;
         this.tileName = name;
 
-
-
     }
-
 
     public void setBalanceChange(int balanceChange) {
         this.balanceChange = balanceChange;
@@ -42,8 +40,8 @@ public class Tile {
         Tile burgerbaren = new Tile ("BURGERBAREN", -1);
         Tile pizzeriaet = new Tile ("PIZZERIAET", -1);
         Tile chanceKort1 = new Tile ("CHANCE", 0);
-        Tile slikbutikken = new Tile ("SLIKBUTIKKEN", -1);
-        Tile iskiosken = new Tile ("ISKIOSKEN", -1);
+        Tile slikButikken = new Tile ("SLIKBUTIKKEN", -1);
+        Tile isKiosken = new Tile ("ISKIOSKEN", -1);
         Tile visitPrison = new Tile ("PÅ BESØG I FÆNGSEL", 0);
         Tile museet = new Tile ("MUSEET", -2);
         Tile biblioteket = new Tile ("BIBLIOTEKET", -2);
@@ -54,9 +52,9 @@ public class Tile {
         Tile spillehallen = new Tile ("SPILLEHALLEN", -3);
         Tile biografen = new Tile ("BIOGRAFEN", -3);
         Tile chanceKort3 = new Tile ("CHANCE", 0);
-        Tile legtøjsbutikken = new Tile ("LEGTØJSBUTIKKEN", -3);
+        Tile toyStore = new Tile ("LEGTØJSBUTIKKEN", -3);
         Tile dyrehandlen = new Tile ("DYREHANDLEN", -3);
-        Tile gaaIFængsel = new Tile ("GÅ I FÆNGSEL", 0);
+        Tile goPrison = new Tile ("GÅ I FÆNGSEL", 0);
         Tile bowlinghallen = new Tile ("BOWLINGHALLEN", -4);
         Tile zoo = new Tile ("ZOO", -4);
         Tile chanceKort4 = new Tile ("CHANCE", 0);
@@ -68,8 +66,8 @@ public class Tile {
         tiles[1] = burgerbaren;
         tiles[2] = pizzeriaet;
         tiles[3] = chanceKort1;
-        tiles[4] = slikbutikken;
-        tiles[5] = iskiosken;
+        tiles[4] = slikButikken;
+        tiles[5] = isKiosken;
         tiles[6] = visitPrison;
         tiles[7] = museet;
         tiles[8] = biblioteket;
@@ -80,9 +78,9 @@ public class Tile {
         tiles[13] = spillehallen;
         tiles[14] = biografen;
         tiles[15] = chanceKort3;
-        tiles[16] = legtøjsbutikken;
+        tiles[16] = toyStore;
         tiles[17] = dyrehandlen;
-        tiles[18] = gaaIFængsel;
+        tiles[18] = goPrison;
         tiles[19] = bowlinghallen;
         tiles[20] = zoo;
         tiles[21] = chanceKort4;

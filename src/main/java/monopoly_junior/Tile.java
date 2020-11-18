@@ -3,6 +3,8 @@ package monopoly_junior;
 import java.util.HashMap;
 
 public class Tile {
+
+
     /**
      * constructor
      */
@@ -14,25 +16,23 @@ public class Tile {
 
 
 
-
-
     public Tile(String name,int balanceChange)
     {
         this.balanceChange = balanceChange;
         this.tileName = name;
-
     }
+
+
 
     public void setBalanceChange(int balanceChange) {
         this.balanceChange = balanceChange;
     }
-
-
-    public String PropertyOwner (String playername, ){
-
-        return propertyOwner;
-
+    public int getBalanceChange() {
+        return balanceChange;
     }
+
+
+
 
 
 

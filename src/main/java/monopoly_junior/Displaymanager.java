@@ -1,3 +1,5 @@
+package monopoly_junior;
+
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
@@ -34,7 +36,7 @@ public class Displaymanager {
      * It also uses an if statement to translate the index of one array of 12 to an array of 16 with
      * spaces at index 0 4 8 12
      * @param fields is the current GUI_Field []
-     * @return Returns gui with Tile names, Tile balance and random colors
+     * @return Returns gui with monopoly_junior.Tile names, monopoly_junior.Tile balance and random colors
      * for the tiles and the
      * background
      */
@@ -174,7 +176,7 @@ public class Displaymanager {
      * @param playerturn Checks who's turn it is if, true player 1 if false player 2.
      * @param playerText The text displayed after the players name.
      * @param player1name Name of player 1.
-     * @param player2name Name of Player 2.
+     * @param player2name Name of monopoly_junior.Player 2.
      * @return turn String including the name of the player
      */
 

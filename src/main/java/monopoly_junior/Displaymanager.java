@@ -43,19 +43,14 @@ public class Displaymanager {
     public static GUI initBoard(GUI_Field[] fields){
 
         GUI.setNull_fields_allowed(true);
-        Tile[] tiles = Tile.tileListInit();
+        Tile[] tiles =  new Tile[24]; //Tile.tileListInit();
         String tileBalance, tileName;
-        int j = 0;
 
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < tiles.length; i++) {
 
-            j++;
-            if ((i == 0) || (i == 4) || (i == 8) || (i == 12)) {
-             j--;
-            }
-            else {
-                tileBalance = Integer.toString(tiles[j].getBalanceChange());
-                tileName = tiles[j].getTileName();
+
+                tileBalance = "PÅ BESØG"; //Integer.toString(tiles[i].getBalanceChange());
+                tileName = " I FÆNGSEL"; //tiles[i].getTileName();
 
 
                 GUI_Street street = new GUI_Street();
@@ -65,7 +60,7 @@ public class Displaymanager {
                 fields[i] = street;
                 fields[i].setBackGroundColor(Color.getHSBColor((float)Math.random(),(float)0.50,(float)0.85));
             }
-        }
+
         GUI gui = new GUI(fields,Color.getHSBColor((float)Math.random(),(float)0.60,(float)0.75));
 
 

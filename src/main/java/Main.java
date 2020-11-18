@@ -21,7 +21,7 @@ public class Main {
         int sumOfDice;
 
         // Gui field initialized for use in everything related to the GUI
-        GUI_Field[] fields = new GUI_Field[16];
+        GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(fields);
         Player player1 = new Player(1000, 1, true, gui.getUserString(stringList.get("typeName1")));
         Player player2 = new Player(1000, 1, false, gui.getUserString(stringList.get("typeName2")));

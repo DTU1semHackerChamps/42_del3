@@ -1,20 +1,31 @@
 package monopoly_junior;
 
+import ChanceCard.JailCard;
+
 public class Player {
     private int balance;
     private int position;
-    private boolean playerTurn;
     private String playerName;
+    private boolean jailCard;
 
 
 
-    public Player(int balance, int position, boolean playerTurn, String name){
+    public Player(int balance, int position, String name, boolean jailCard){
 
         this.balance = balance;
         this.position = position;
-        this.playerTurn = playerTurn;
+        this.jailCard = jailCard;
+
         playerName = name;
 
+    }
+
+    public void setJailCard(boolean jailCard) {
+        this.jailCard = jailCard;
+    }
+
+    public boolean isJailCard() {
+        return jailCard;
     }
 
     public void setBalance(int balance) {

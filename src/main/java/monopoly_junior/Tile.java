@@ -42,17 +42,6 @@ public class Tile {
         this.propertyOwner = propertyOwner;
     }
 
-    public int getBalanceChangeExtra(Tile[] tiles){
-        int newBalanceChange = balanceChange;
-        if(propertyOwner != 0) {
-            for (int i = 1; i < tiles.length; i++) {
-                if ((color == tiles[i].getColor()) && (tiles[i].propertyOwner == tiles[i - 1].propertyOwner)) {
-                    newBalanceChange = balanceChange * 2;
-                }
-            }
-        }
-        return newBalanceChange;
-    }
 
     public String getTileName() {
         return tileName;
@@ -94,6 +83,7 @@ public class Tile {
         // red 6
         // gold 7
         // green 8
+        // blue 9
 
         tiles[0] = start;
         tiles[1] = burgerbaren;

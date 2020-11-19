@@ -6,7 +6,7 @@ import gui_main.GUI;
 import monopoly_junior.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Tile[] tiles = Tile.tileListInit();
 
@@ -50,7 +50,7 @@ public class Main {
             player2.setPlayerTurn(false);
             gui_Player1.setBalance(player1.getBalance());
             gui_Player2.setBalance(player2.getBalance());
-            Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2);
+            Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2, 0);
 
             // While loop for the turns of the game
             while(Displaymanager.rollScreen(gui, Displaymanager.displayPlayerTurn(player1.getPlayerTurn(),stringList,player1.getPlayerName(),player2.getPlayerName()), stringList.get("rollButton"))){
@@ -70,7 +70,7 @@ public class Main {
                 gui_Player2.setBalance(player2.getBalance());
 
                 // Updating the position, the dice of the players in the gui
-                Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2);
+                Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2, sumOfDice);
                 Displaymanager.displayDice(gui, dice1.getFaceValue(), dice2.getFaceValue());
                 // Displays the tiles Text when player moves there as a pop-up.
                 Displaymanager.displayTileText(tileTexts,currentPlayer.getPosition(), gui);

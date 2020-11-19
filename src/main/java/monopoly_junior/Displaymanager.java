@@ -9,6 +9,7 @@ import gui_fields.GUI_Board;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Displaymanager {
 
@@ -159,52 +160,29 @@ public class Displaymanager {
      * @param gui_Player1 The GUI_Player one used to change the car position
      * @param gui_Player2 The GUI_Player two used to change the car position
      */
-    public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2){
+    public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2, int diceSum) throws InterruptedException {
 
 
-        for (int i = 1; i < 24; i++) {
-            if ((i == 4)||(i == 8)||(i == 12)) {
+//        for (int i = 0; i < 24; i++) {
+//
+//            fields[i].removeAllCars();
+//            fields[i].setCar(gui_Player1, false);
+//            fields[i].setCar(gui_Player2, false);
+//
+//        }
 
-            } else {
-//                fields[i].removeAllCars();
-                fields[i].setCar(gui_Player1, false);
-                fields[i].setCar(gui_Player2, false);
-            }
-        }
-        switch (positionPlayer1) {
-            case 4:
-            case 5:
-            case 6: positionPlayer1 += 1;
-                break;
-            case 7:
-            case 8:
-            case 9: positionPlayer1 += 2;
-                break;
-            case 10:
-            case 11:
-            case 12: positionPlayer1 += 3;
-                break;
-        }
-
-        switch (positionPlayer2) {
-            case 4:
-            case 5:
-            case 6: positionPlayer2 += 1;
-                break;
-            case 7:
-            case 8:
-            case 9: positionPlayer2 += 2;
-                break;
-            case 10:
-            case 11:
-            case 12: positionPlayer2 += 3;
-                break;
-
-        }
-
-        fields[positionPlayer1].setCar(gui_Player1, true);
         fields[positionPlayer2].setCar(gui_Player2, true);
+        int lastPlayerPos = Math.abs(positionPlayer1 - diceSum);
 
+        fields[lastPlayerPos].setCar(gui_Player1, false);
+        for (int j = lastPlayerPos; j <= positionPlayer1; j++) {
+
+                fields[j].setCar(gui_Player1, true);
+                Thread.sleep(250);
+                fields[j].setCar(gui_Player1, false);
+
+        }
+        fields[positionPlayer1].setCar(gui_Player1, true);
     }
 
     /**

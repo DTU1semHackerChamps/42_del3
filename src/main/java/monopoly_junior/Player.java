@@ -10,13 +10,12 @@ public class Player {
 
 
 
-    public Player(int balance, int position, String name, boolean jailCard){
+    public Player(int balance, int position, String playerName, boolean jailCard){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
-
-        playerName = name;
+        this.playerName = playerName;
 
     }
 
@@ -70,13 +69,6 @@ public class Player {
        return position;
     }
 
-    public void setPlayerTurn(boolean playerTurn) {
-        this.playerTurn = playerTurn;
-    }
-
-    public boolean getPlayerTurn(){
-        return playerTurn;
-    }
 
     /**
      * Checks if winning requirement is reached
@@ -90,38 +82,6 @@ public class Player {
         return winStatus;
     }
 
-    /**
-     * player switch methode
-     * @param player1
-     * @param player2
-     * @return returns who is the current player
-     */
-    public static Player shiftPlayer (Player player1, Player player2){
-        Player currentPlayer;
-        if (player1.getPlayerTurn()){
-            player1.setPlayerTurn(false);
-            currentPlayer = player1;
-        } else {
-            player1.setPlayerTurn(true);
-            currentPlayer = player2;
-        }
-        return currentPlayer;
-    }
-
-    /**
-     * extra turn methode
-     * @param player1
-     * @param tileExtraTurn
-     */
-    public static void extraTurn (Player player1, boolean tileExtraTurn){
-        if (tileExtraTurn) {
-            if(player1.getPlayerTurn()){
-                player1.setPlayerTurn(false);
-            } else {
-                player1.setPlayerTurn(true);
-            }
-        }
-    }
 
     public void setPlayerName(String playerName) {
         this.playerName = playerName;

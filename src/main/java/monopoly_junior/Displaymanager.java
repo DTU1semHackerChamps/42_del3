@@ -5,6 +5,7 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 import gui_fields.GUI_Street;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Board;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -27,7 +28,9 @@ public class Displaymanager {
      */
 
     public static void displayDice(GUI gui,int dice1, int dice2){
-        gui.setDice(dice1,dice2);
+        //gui.setDice(dice1,dice2);
+        gui.setDice(dice1,4,1,dice2,5,1);
+
 
     }
 
@@ -91,7 +94,7 @@ public class Displaymanager {
 
                 GUI_Street street = new GUI_Street();
                 street.setTitle(tileName);
-                street.setSubText(tileBalance);
+                street.setSubText("M" + tileBalance);
 
                 fields[i] = street;
                 fields[i].setBackGroundColor(Color.getHSBColor(H,S,B));

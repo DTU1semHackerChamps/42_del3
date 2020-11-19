@@ -47,28 +47,36 @@ public class Tile {
      */
     public static Tile [] tileListInit(HashMap<String,String> stringList){
         Tile [] tiles = new Tile[24];
-        Tile start = new Tile ("START",2,"");
-        Tile burgerbaren = new Tile ("BURGERBAREN", -1,"brown");
-        Tile pizzeriaet = new Tile ("PIZZERIAET", -1, "brown");
-        Tile chanceKort = new Tile ("CHANCE", 0,"");
-        Tile slikButikken = new Tile ("SLIKBUTIKKEN", -1,"lightBlue");
-        Tile isKiosken = new Tile ("ISKIOSKEN", -1, "lightBlue");
-        Tile visitPrison = new Tile ("PÅ BESØG I FÆNGSEL", 0,"");
-        Tile museet = new Tile ("MUSEET", -2,"pink");
-        Tile biblioteket = new Tile ("BIBLIOTEKET", -2,"pink");
-        Tile skaterparken = new Tile ("SKATERPARKEN", -2,"orange");
-        Tile swimmingpoolen = new Tile ("SWIMMINGPOOLEN",-2,"orange");
-        Tile gratisParking = new Tile ("GRATIS PARKING",0,"");
-        Tile spillehallen = new Tile ("SPILLEHALLEN", -3, "red");
-        Tile biografen = new Tile ("BIOGRAFEN", -3, "red");
-        Tile toyStore = new Tile ("LEGTØJSBUTIKKEN", -3,"gold");
-        Tile dyrehandlen = new Tile ("DYREHANDLEN", -3, "gold");
-        Tile goPrison = new Tile ("GÅ I FÆNGSEL", 0, "");
-        Tile bowlinghallen = new Tile ("BOWLINGHALLEN", -4, "green");
-        Tile zoo = new Tile ("ZOO", -4, "green");
-        Tile vandlandet = new Tile ("VANDLANDET", -5, "darkBlue");
-        Tile strandpromenaden = new Tile ("STRANDPROMENADEN",-5, "darkBlue");
-        //
+        Tile start = new Tile ("START",2,"1");
+        Tile burgerbaren = new Tile ("BURGERBAREN", -1,"2");
+        Tile pizzeriaet = new Tile ("PIZZERIAET", -1, "2");
+        Tile chanceKort = new Tile ("CHANCE", 0,"1");
+        Tile slikButikken = new Tile ("SLIKBUTIKKEN", -1,"3");
+        Tile isKiosken = new Tile ("ISKIOSKEN", -1, "3");
+        Tile visitPrison = new Tile ("PÅ BESØG I FÆNGSEL", 0,"1");
+        Tile museet = new Tile ("MUSEET", -2,"pink 4");
+        Tile biblioteket = new Tile ("BIBLIOTEKET", -2,"4");
+        Tile skaterparken = new Tile ("SKATERPARKEN", -2,"5");
+        Tile swimmingpoolen = new Tile ("SWIMMINGPOOLEN",-2,"5");
+        Tile gratisParking = new Tile ("GRATIS PARKING",0,"1");
+        Tile spillehallen = new Tile ("SPILLEHALLEN", -3, "6");
+        Tile biografen = new Tile ("BIOGRAFEN", -3, "red 6");
+        Tile toyStore = new Tile ("LEGTØJSBUTIKKEN", -3,"7");
+        Tile dyrehandlen = new Tile ("DYREHANDLEN", -3, "7");
+        Tile goPrison = new Tile ("GÅ I FÆNGSEL", 0, "1");
+        Tile bowlinghallen = new Tile ("BOWLINGHALLEN", -4, "8");
+        Tile zoo = new Tile ("ZOO", -4, "8");
+        Tile vandlandet = new Tile ("VANDLANDET", -5, "9");
+        Tile strandpromenaden = new Tile ("STRANDPROMENADEN",-5, "9");
+
+        // no color 1
+        // brown 2
+        // lightBlue 3
+        // pink 4
+        // orange 5
+        // red 6
+        // gold 7
+        // green 8
 
         tiles[0] = start;
         tiles[1] = burgerbaren;

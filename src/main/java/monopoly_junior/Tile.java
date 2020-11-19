@@ -12,14 +12,24 @@ public class Tile {
     private String tileName;
     private String propertyPrice;
     public String propertyOwner;
+    private String color;
 
 
 
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public Tile(String name,int balanceChange,String color)
     {
         this.balanceChange = balanceChange;
         this.tileName = name;
+        this.color = color;
     }
 
 
@@ -30,8 +40,6 @@ public class Tile {
     public int getBalanceChange() {
         return balanceChange;
     }
-
-
 
 
 

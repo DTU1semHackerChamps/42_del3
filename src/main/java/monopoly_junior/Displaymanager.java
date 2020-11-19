@@ -68,23 +68,23 @@ public class Displaymanager {
                 tileName = tiles[i].getTileName();
 
                 switch (tiles[i].getColor()){
-                    case 1 :H = 0.5f; S = 0f; B = 0.98f;
+                    case 0 :H = 0.5f; S = 0f; B = 0.98f;
                         break;
-                    case 2 :H = 0.05f; S = 0.64f; B = 0.58f;
+                    case 1 :H = 0.05f; S = 0.64f; B = 0.58f;
                         break;
-                    case 3 :H = 0.56f; S = 0.27f; B = 0.96f;
+                    case 2 :H = 0.56f; S = 0.27f; B = 0.96f;
                         break;
-                    case 4 :H = 0.91f; S = 0.67f; B = 0.83f;
+                    case 3 :H = 0.91f; S = 0.67f; B = 0.83f;
                         break;
-                    case 5 :H = 0.09f; S = 0.87f; B = 0.97f;
+                    case 4 :H = 0.09f; S = 0.87f; B = 0.97f;
                         break;
-                    case 6 :H = 1.00f; S = 0.85f; B = 0.94f;
+                    case 5 :H = 1.00f; S = 0.85f; B = 0.94f;
                         break;
-                    case 7 :H = 0.15f; S = 0.83f; B = 0.98f;
+                    case 6 :H = 0.15f; S = 0.83f; B = 0.98f;
                         break;
-                    case 8 :H = 0.37f; S = 0.76f; B = 0.66f;
+                    case 7 :H = 0.37f; S = 0.76f; B = 0.66f;
                         break;
-                    case 9 :H = 0.57f; S = 0.92f; B = 0.72f;
+                    case 8 :H = 0.57f; S = 0.92f; B = 0.72f;
                         break;
 
                 }

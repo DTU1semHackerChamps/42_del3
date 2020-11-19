@@ -1,35 +1,40 @@
 package monopoly_junior;
 
+import java.util.HashMap;
+
 public class Tile {
+
+
     /**
      * constructor
      */
     private int balanceChange;
-    private boolean extraTurn;
     private String tileName;
-    public Tile(int balanceChange, boolean extraTurn,String name)
+    private String propertyPrice;
+    public String propertyOwner;
+
+
+
+
+    public Tile(String name,int balanceChange,String color)
     {
         this.balanceChange = balanceChange;
-        this.extraTurn = extraTurn;
-        tileName = name;
-
+        this.tileName = name;
     }
+
+
 
     public void setBalanceChange(int balanceChange) {
         this.balanceChange = balanceChange;
     }
-
-    public void setExtraTurn(boolean extraTurn) {
-        this.extraTurn = extraTurn;
-    }
-
     public int getBalanceChange() {
         return balanceChange;
     }
 
-    public boolean isExtraTurn() {
-        return extraTurn;
-    }
+
+
+
+
 
     public String getTileName() {
         return tileName;
@@ -40,32 +45,63 @@ public class Tile {
      * @return returns array of the specified initiated tiles
      */
     public static Tile [] tileListInit(){
-        Tile [] tiles = new Tile[13];
-        Tile start = new Tile (0,false,"Start");
-        Tile tower = new Tile (250,false, "Tower");
-        Tile crater = new Tile (-100,false, "Crater");
-        Tile palaceGates = new Tile (100,false, "Palace gates");
-        Tile coldDesert = new Tile (-20,false, "Cold Desert");
-        Tile walledCity = new Tile (180,false, "Walled city");
-        Tile monastery = new Tile (0,false, "Monastery");
-        Tile blackCave = new Tile (-70,false, "Black cave");
-        Tile hutsInTheMountain = new Tile (60,false, "Huts in the woods");
-        Tile theWerewall = new Tile (-80,true, "The Werewall");
-        Tile thePit = new Tile (-50,false, "The pit");
-        Tile goldmine = new Tile (650,false,"Goldmine");
+        Tile [] tiles = new Tile[24];
+        Tile start = new Tile ("START",2,"1");
+        Tile burgerbaren = new Tile ("BURGERBAREN", -1,"2");
+        Tile pizzeriaet = new Tile ("PIZZERIAET", -1, "2");
+        Tile chanceKort = new Tile ("CHANCE", 0,"1");
+        Tile slikButikken = new Tile ("SLIKBUTIKKEN", -1,"3");
+        Tile isKiosken = new Tile ("ISKIOSKEN", -1, "3");
+        Tile visitPrison = new Tile ("PÅ BESØG I FÆNGSEL", 0,"1");
+        Tile museet = new Tile ("MUSEET", -2,"pink 4");
+        Tile biblioteket = new Tile ("BIBLIOTEKET", -2,"4");
+        Tile skaterparken = new Tile ("SKATERPARKEN", -2,"5");
+        Tile swimmingpoolen = new Tile ("SWIMMINGPOOLEN",-2,"5");
+        Tile gratisParking = new Tile ("GRATIS PARKING",0,"1");
+        Tile spillehallen = new Tile ("SPILLEHALLEN", -3, "6");
+        Tile biografen = new Tile ("BIOGRAFEN", -3, "red 6");
+        Tile toyStore = new Tile ("LEGTØJSBUTIKKEN", -3,"7");
+        Tile dyrehandlen = new Tile ("DYREHANDLEN", -3, "7");
+        Tile goPrison = new Tile ("GÅ I FÆNGSEL", 0, "1");
+        Tile bowlinghallen = new Tile ("BOWLINGHALLEN", -4, "8");
+        Tile zoo = new Tile ("ZOO", -4, "8");
+        Tile vandlandet = new Tile ("VANDLANDET", -5, "9");
+        Tile strandpromenaden = new Tile ("STRANDPROMENADEN",-5, "9");
 
-        tiles[1] = start;
-        tiles[2] = tower;
-        tiles[3] = crater;
-        tiles[4] = palaceGates;
-        tiles[5] = coldDesert;
-        tiles[6] = walledCity;
-        tiles[7] = monastery;
-        tiles[8] = blackCave;
-        tiles[9] = hutsInTheMountain;
-        tiles[10] = theWerewall;
-        tiles[11] = thePit;
-        tiles[12] = goldmine;
+        // no color 1
+        // brown 2
+        // lightBlue 3
+        // pink 4
+        // orange 5
+        // red 6
+        // gold 7
+        // green 8
+
+        tiles[0] = start;
+        tiles[1] = burgerbaren;
+        tiles[2] = pizzeriaet;
+        tiles[3] = chanceKort;
+        tiles[4] = slikButikken;
+        tiles[5] = isKiosken;
+        tiles[6] = visitPrison;
+        tiles[7] = museet;
+        tiles[8] = biblioteket;
+        tiles[9] = chanceKort;
+        tiles[10] = skaterparken;
+        tiles[11] = swimmingpoolen;
+        tiles[12] = gratisParking;
+        tiles[13] = spillehallen;
+        tiles[14] = biografen;
+        tiles[15] = chanceKort;
+        tiles[16] = toyStore;
+        tiles[17] = dyrehandlen;
+        tiles[18] = goPrison;
+        tiles[19] = bowlinghallen;
+        tiles[20] = zoo;
+        tiles[21] = chanceKort;
+        tiles[22] = vandlandet;
+        tiles[23] = strandpromenaden;
+
 
         return tiles;
     }

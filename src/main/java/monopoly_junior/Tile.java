@@ -4,11 +4,27 @@ import java.util.HashMap;
 
 public class Tile {
 
+
+    /**
+     * constructor
+     */
     private int balanceChange;
     private String tileName;
     public int propertyOwner;
     private int color;
 
+
+
+
+
+
+    public Tile(String name,int balanceChange,int color,int propertyOwner)
+    {
+        this.balanceChange = balanceChange;
+        this.tileName = name;
+        this.color = color;
+        this.propertyOwner = propertyOwner;
+    }
     public int getColor() {
         return color;
     }
@@ -16,15 +32,6 @@ public class Tile {
     public void setColor(int color) {
         this.color = color;
     }
-
-    public Tile(String name,int balanceChange,int color, int propertyOwner)
-    {
-        this.balanceChange = balanceChange;
-        this.tileName = name;
-        this.color = color;
-        this.propertyOwner = propertyOwner;
-    }
-
 
 
     public void setBalanceChange(int balanceChange) {
@@ -42,6 +49,17 @@ public class Tile {
         this.propertyOwner = propertyOwner;
     }
 
+    public int getBalanceChangeExtra(Tile[] tiles){
+        int newBalanceChange = balanceChange;
+        if(propertyOwner != 0){
+            for(int i = 1; i < tiles.length; i++){
+                if((tiles[i].getColor() == color) && (tiles[i].propertyOwner == tiles[i-1].propertyOwner)){
+                    newBalanceChange = balanceChange * 2;
+                }
+            }
+        }
+        return newBalanceChange;
+    }
 
     public String getTileName() {
         return tileName;
@@ -83,7 +101,6 @@ public class Tile {
         // red 6
         // gold 7
         // green 8
-        // blue 9
 
         tiles[0] = start;
         tiles[1] = burgerbaren;

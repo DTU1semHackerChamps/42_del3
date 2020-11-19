@@ -16,7 +16,6 @@ public class Tile {
 
 
 
-
     public Tile(String name,int balanceChange,String color)
     {
         this.balanceChange = balanceChange;
@@ -45,7 +44,7 @@ public class Tile {
      * array of tile list
      * @return returns array of the specified initiated tiles
      */
-    public static Tile [] tileListInit(HashMap<String,String> stringList){
+    public static Tile [] tileListInit(){
         Tile [] tiles = new Tile[24];
         Tile start = new Tile ("START",2,"1");
         Tile burgerbaren = new Tile ("BURGERBAREN", -1,"2");

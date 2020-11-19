@@ -55,8 +55,10 @@ it's an available property, and you buy it for
 basisText3
 Monopoly money
 basisText4
-and you owe
+The property is owend by
 basisText5
+and you owe
+basisText6
 in rent
 playerTurn
 it is your turn. Press ROLL to roll.

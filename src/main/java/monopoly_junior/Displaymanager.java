@@ -43,25 +43,61 @@ public class Displaymanager {
     public static GUI initBoard(GUI_Field[] fields){
 
         GUI.setNull_fields_allowed(true);
-        Tile[] tiles =  new Tile[24]; //Tile.tileListInit();
+        Tile[] tiles = Tile.tileListInit();
         String tileBalance, tileName;
+        float H = 0, S = 0,B = 0;
+
+        /* HSB colors
+        BoardBackground H:0.35f S:0.19f B:0.87f
+        White H = 0.5f; S = 0f; B = 0.98f;
+        Brown H = 0.05f; S = 0.64f; B = 0.58f;
+        LightBlue H = 0.56f; S = 0.27f; B = 0.96f;
+        Magenta H = 0.91f; S = 0.67f; B = 0.83f;
+        Orange H = 0.09f; S = 0.87f; B = 0.97f;
+        Red H = 1.00f; S = 0.85f; B = 0.94f;
+        Yellow H = 0.15f; S = 0.83f; B = 0.98f;
+        Green H = 0.37f; S = 0.76f; B = 0.66f;
+        Blue H = 0.57f; S = 0.92f; B = 0.72f;
+
+         */
 
         for (int i = 0; i < tiles.length; i++) {
 
 
-                tileBalance = "PÅ BESØG"; //Integer.toString(tiles[i].getBalanceChange());
-                tileName = " I FÆNGSEL"; //tiles[i].getTileName();
+                tileBalance = Integer.toString(tiles[i].getBalanceChange());
+                tileName = tiles[i].getTileName();
 
+                switch (tiles[i].getColor()){
+                    case 1 :H = 0.5f; S = 0f; B = 0.98f;
+                        break;
+                    case 2 :H = 0.05f; S = 0.64f; B = 0.58f;
+                        break;
+                    case 3 :H = 0.56f; S = 0.27f; B = 0.96f;
+                        break;
+                    case 4 :H = 0.91f; S = 0.67f; B = 0.83f;
+                        break;
+                    case 5 :H = 0.09f; S = 0.87f; B = 0.97f;
+                        break;
+                    case 6 :H = 1.00f; S = 0.85f; B = 0.94f;
+                        break;
+                    case 7 :H = 0.15f; S = 0.83f; B = 0.98f;
+                        break;
+                    case 8 :H = 0.37f; S = 0.76f; B = 0.66f;
+                        break;
+                    case 9 :H = 0.57f; S = 0.92f; B = 0.72f;
+                        break;
+
+                }
 
                 GUI_Street street = new GUI_Street();
                 street.setTitle(tileName);
                 street.setSubText(tileBalance);
 
                 fields[i] = street;
-                fields[i].setBackGroundColor(Color.getHSBColor((float)Math.random(),(float)0.50,(float)0.85));
+                fields[i].setBackGroundColor(Color.getHSBColor(H,S,B));
             }
 
-        GUI gui = new GUI(fields,Color.getHSBColor((float)Math.random(),(float)0.60,(float)0.75));
+        GUI gui = new GUI(fields,Color.getHSBColor((float)0.355,(float)0.19,(float)0.87));
 
 
         return gui;

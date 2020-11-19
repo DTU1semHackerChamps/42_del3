@@ -44,6 +44,10 @@ public class Main {
             gui_Player2.setBalance(player2.getBalance());
             Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2);
 
+
+
+
+
             // While loop for the turns of the game
             while(Displaymanager.rollScreen(gui, Displaymanager.displayPlayerTurn(player1.getPlayerTurn(),stringList,player1.getPlayerName(),player2.getPlayerName()), stringList.get("rollButton"))){
                 // Current player set
@@ -55,7 +59,7 @@ public class Main {
                 // updating the balance of current player corresponding to the set balance amount of a tile
                 currentPlayer.addBalance(tileList[currentPlayer.getPosition()].getBalanceChange());
                 // Determining if the current player gets an extra turn
-                Player.extraTurn(player1, tileList[currentPlayer.getPosition()].isExtraTurn());
+                //Player.extraTurn(player1, tileList[currentPlayer.getPosition()].isExtraTurn());
 
                 // Updating the balance of the players in the gui
                 gui_Player1.setBalance(player1.getBalance());

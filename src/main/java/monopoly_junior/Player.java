@@ -74,13 +74,6 @@ public class Player {
      * Checks if winning requirement is reached
      * @return returns if a player has won
      */
-    public boolean hasWon(){
-        boolean winStatus = false;
-        if(balance >= 3000){
-            winStatus = true;
-        }
-        return winStatus;
-    }
 
 
     public void setPlayerName(String playerName) {

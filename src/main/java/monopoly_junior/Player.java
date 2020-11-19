@@ -1,20 +1,30 @@
 package monopoly_junior;
 
+import ChanceCard.JailCard;
+
 public class Player {
     private int balance;
     private int position;
-    private boolean playerTurn;
     private String playerName;
+    private boolean jailCard;
 
 
 
-    public Player(int balance, int position, boolean playerTurn, String name){
+    public Player(int balance, int position, String playerName, boolean jailCard){
 
         this.balance = balance;
         this.position = position;
-        this.playerTurn = playerTurn;
-        playerName = name;
+        this.jailCard = jailCard;
+        this.playerName = playerName;
 
+    }
+
+    public void setJailCard(boolean jailCard) {
+        this.jailCard = jailCard;
+    }
+
+    public boolean isJailCard() {
+        return jailCard;
     }
 
     public void setBalance(int balance) {
@@ -59,58 +69,12 @@ public class Player {
        return position;
     }
 
-    public void setPlayerTurn(boolean playerTurn) {
-        this.playerTurn = playerTurn;
-    }
-
-    public boolean getPlayerTurn(){
-        return playerTurn;
-    }
 
     /**
      * Checks if winning requirement is reached
      * @return returns if a player has won
      */
-    public boolean hasWon(){
-        boolean winStatus = false;
-        if(balance >= 3000){
-            winStatus = true;
-        }
-        return winStatus;
-    }
 
-    /**
-     * player switch methode
-     * @param player1
-     * @param player2
-     * @return returns who is the current player
-     */
-    public static Player shiftPlayer (Player player1, Player player2){
-        Player currentPlayer;
-        if (player1.getPlayerTurn()){
-            player1.setPlayerTurn(false);
-            currentPlayer = player1;
-        } else {
-            player1.setPlayerTurn(true);
-            currentPlayer = player2;
-        }
-        return currentPlayer;
-    }
-
-    /**
-     * extra turn methode
-     * @param player1
-     * @param tileExtraTurn
-     */
-    public static void extraTurn (Player player1, boolean tileExtraTurn){
-        if (tileExtraTurn) {
-            if(player1.getPlayerTurn()){
-                player1.setPlayerTurn(false);
-            } else {
-                player1.setPlayerTurn(true);
-            }
-        }
-    }
 
     public void setPlayerName(String playerName) {
         this.playerName = playerName;

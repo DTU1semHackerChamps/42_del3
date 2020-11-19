@@ -123,11 +123,13 @@ public class Displaymanager {
     public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2){
 
 
-        for (int i = 1; i < 16; i++) {
+        for (int i = 1; i < 24; i++) {
             if ((i == 4)||(i == 8)||(i == 12)) {
 
             } else {
-                fields[i].removeAllCars();
+//                fields[i].removeAllCars();
+                fields[i].setCar(gui_Player1, false);
+                fields[i].setCar(gui_Player2, false);
             }
         }
         switch (positionPlayer1) {

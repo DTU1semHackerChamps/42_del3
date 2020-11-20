@@ -42,15 +42,10 @@ public class Tile {
         return balanceChange;
     }
 
-    public static int nextColor(int position, int color, Tile[] tiles){
-        int i = position;
-        do {
-            i++;
-            if(i>24){
-                i=0;
-            }
-        } while(color == tiles[i].color);
-        return i;
+    public static int goToColor(int color){
+        int position;
+        position = 1+3*(color-1);
+        return position;
     }
 
     public int getPropertyOwner() {

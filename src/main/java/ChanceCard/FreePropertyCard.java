@@ -22,9 +22,9 @@ public class FreePropertyCard {
 
     public void useFreePropertyCard(Player[] currentPlayers, Tile[] tiles, Player currentPlayer, GUI gui){
         if(gui.getUserLeftButtonPressed("ChooseColour", "Yellow", "Blue")){
-            nextColor(currentPlayer,1);
+            Tile.nextColor(currentPlayer,);
         } else {
-            currentPlayer.setPosition(nextColor(currentPlayer.getPosition(),));
+            currentPlayer.setPosition(Tile.nextColor(currentPlayer.getPosition(),));
         }
 
         currentPlayer.

@@ -25,6 +25,7 @@ public class Tile {
         this.color = color;
         this.propertyOwner = propertyOwner;
     }
+
     public int getColor() {
         return color;
     }
@@ -39,6 +40,17 @@ public class Tile {
     }
     public int getBalanceChange() {
         return balanceChange;
+    }
+
+    public static int nextColor(int position, int color, Tile[] tiles){
+        int i = position;
+        do {
+            i++;
+            if(i>24){
+                i=0;
+            }
+        } while(color == tiles[i].color);
+        return i;
     }
 
     public int getPropertyOwner() {

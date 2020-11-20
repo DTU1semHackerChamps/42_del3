@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import monopoly_junior.Player;
 import monopoly_junior.Tile;
+
 import gui_main.GUI;
 
 
@@ -21,9 +22,9 @@ public class FreePropertyCard {
 
     public void useFreePropertyCard(Player[] currentPlayers, Tile[] tiles, Player currentPlayer, GUI gui){
         if(gui.getUserLeftButtonPressed("ChooseColour", "Yellow", "Blue")){
-            nextColour(currentPlayer,1);
+            nextColor(currentPlayer,1);
         } else {
-            nextColour(currentPlayer,2);
+            currentPlayer.setPosition(nextColor(currentPlayer.getPosition(),));
         }
 
         currentPlayer.

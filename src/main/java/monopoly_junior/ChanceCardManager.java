@@ -21,6 +21,7 @@ public class ChanceCardManager {
         //chanceCards[5] = new CharacterCard(stringList.get("ChanceCard6"), null, null, currentPlayer, gui);
         chanceCards[6] = new moveMoneyCard(stringList.get("ChanceCard7"), null, null, currentPlayer, gui, 2, 0, false);
         chanceCards[7] = new ChooseColorCard(stringList.get("ChanceCard8"), null, null, currentPlayer, gui, 4,7, stringList.get("ColorOrange"), stringList.get("ColorGreen"));
+        //chanceCards[8] = new ColorCard(stringList.get("ChanceCard9"), null, null, currentPlayer, gui);
 
 
 

@@ -86,8 +86,49 @@ public class ChooseColorCard extends ChanceCard{
 
         if(colorSelection && !ownerArray[0] && !ownerArray[1]){
 
+            int playerNum = 0;
+            int balanceChange;
+
+            if(gui.getUserLeftButtonPressed("", tiles[Tile.goToColor(color1)].getTileName(), tiles[Tile.goToColor(color1)+1].getTileName())) {
+                playerNum = tiles[Tile.goToColor(color1)].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color1)].getBalanceChange();
+                tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+            else{
+                playerNum = tiles[Tile.goToColor(color1)+1].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color1)+1].getBalanceChange();
+                tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+            if(playerNum != 0){
+                currentPlayer.addBalance(-balanceChange);
+                players[playerNum].addBalance(balanceChange);
+            }
+
         }
 
+        if(colorSelection && !ownerArray[2] && !ownerArray[3]){
+
+            int playerNum = 0;
+            int balanceChange;
+
+            if(gui.getUserLeftButtonPressed("", tiles[Tile.goToColor(color2)].getTileName(), tiles[Tile.goToColor(color2)+1].getTileName())) {
+                playerNum = tiles[Tile.goToColor(color2)].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color2)].getBalanceChange();
+                tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+            else{
+                playerNum = tiles[Tile.goToColor(color2)+1].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color2)+1].getBalanceChange();
+                tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+            if(playerNum != 0){
+                currentPlayer.addBalance(-balanceChange);
+                players[playerNum].addBalance(balanceChange);
+            }
+
+        }
 
     }
 }

@@ -16,6 +16,7 @@ public class ChooseColorCard extends ChanceCard{
         this.color2 = color2;
         this.colorName1 = colorName1;
         this.colorName2 = colorName2;
+
     }
 
     @Override
@@ -24,7 +25,7 @@ public class ChooseColorCard extends ChanceCard{
         boolean ownerArray[] = new boolean[4];
         boolean if1 = false;
         boolean if2 = false;
-        boolean colorSelection;
+        boolean colorSelection = false;
 
         if(tiles[Tile.goToColor(color1)].getPropertyOwner() != 0){
             ownerArray[0] = true;
@@ -53,13 +54,81 @@ public class ChooseColorCard extends ChanceCard{
         }
 
         //If at least one property of each color is not owned or all properties are owned, you will get the selection between both colors.
-        if(!if1 || !if2){
+        if(!if1 && !if2){
             if(gui.getUserLeftButtonPressed("",colorName1,colorName2)){
                 colorSelection = true;
             }
         }
 
+        if(colorSelection && (ownerArray[0] ^ ownerArray[1])){
 
+            if(ownerArray[1]) {
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)].getTileName());
+                tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }else{
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)+1].getTileName());
+                tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+        }
+
+        if(colorSelection && (ownerArray[2] ^ ownerArray[3])){
+
+            if(ownerArray[2]) {
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)].getTileName());
+                tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }else{
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)+1].getTileName());
+                tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+        }
+
+        if(colorSelection && !ownerArray[0] && !ownerArray[1]){
+
+            int playerNum = 0;
+            int balanceChange;
+
+            if(gui.getUserLeftButtonPressed("", tiles[Tile.goToColor(color1)].getTileName(), tiles[Tile.goToColor(color1)+1].getTileName())) {
+                playerNum = tiles[Tile.goToColor(color1)].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color1)].getBalanceChange();
+                tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+            else{
+                playerNum = tiles[Tile.goToColor(color1)+1].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color1)+1].getBalanceChange();
+                tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+            if(playerNum != 0){
+                currentPlayer.addBalance(-balanceChange);
+                players[playerNum].addBalance(balanceChange);
+            }
+
+        }
+
+        if(colorSelection && !ownerArray[2] && !ownerArray[3]){
+
+            int playerNum = 0;
+            int balanceChange;
+
+            if(gui.getUserLeftButtonPressed("", tiles[Tile.goToColor(color2)].getTileName(), tiles[Tile.goToColor(color2)+1].getTileName())) {
+                playerNum = tiles[Tile.goToColor(color2)].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color2)].getBalanceChange();
+                tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+            else{
+                playerNum = tiles[Tile.goToColor(color2)+1].getPropertyOwner();
+                balanceChange = tiles[Tile.goToColor(color2)+1].getBalanceChange();
+                tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+            if(playerNum != 0){
+                currentPlayer.addBalance(-balanceChange);
+                players[playerNum].addBalance(balanceChange);
+            }
+
+        }
 
     }
 }

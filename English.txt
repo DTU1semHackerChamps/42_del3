@@ -49,7 +49,11 @@ water park.
 BoardwalkField
 boardwalk.
 ChanceCardField
-Chance card
+Chance card.
+FreeparkingField
+free parking.
+VisitJailField
+visit jail.
 basisText1
 You have landed on the
 basisText2

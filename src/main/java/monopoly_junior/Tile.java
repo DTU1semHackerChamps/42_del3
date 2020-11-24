@@ -1,5 +1,6 @@
 package monopoly_junior;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class Tile {
@@ -69,9 +70,19 @@ public class Tile {
      * array of tile list
      * @return returns array of the specified initiated tiles
      */
+    static HashMap<String,String> stringList;
+
+    static {
+        try {
+            stringList = Language.languageInit("english");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static Tile [] tileListInit(){
         Tile [] tiles = new Tile[24];
-        Tile start = new Tile ("START",2,0,0);
+        Tile start = new Tile (stringList.get("StartField"),2,0,0);
         Tile burgerbaren = new Tile ("BURGERBAREN", -1,1,0);
         Tile pizzeriaet = new Tile ("PIZZERIAET", -1, 1,0);
         Tile chanceKort = new Tile ("CHANCE", 0,0,0);

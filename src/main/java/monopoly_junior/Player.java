@@ -99,11 +99,34 @@ public class Player {
 
 
 
-    //
+    // From here new code added by Zahed.
 
-    private Player[] players;
 
-    public PlayerList(int amount){
+//    private boolean isDeath;
+//    private boolean isWinner;
+
+//    public  void PlayerSartPos(){
+//        balance = 0;
+//        isDeath = false;
+//        isWinner = false;
+//
+//
+//    }
+
+     String[] player;
+
+    public void PlayerList(int numOfPlayer){
+
+        for (int i = 0; i < numOfPlayer; i++) {
+            player = new String[i];
+        }
 
     }
+
+    public int nextPlayer(int index){
+        index = ++index % player.length;
+        return index;
+    }
+
+
 }

@@ -1,13 +1,31 @@
 package monopoly_junior;
 
 import ChanceCard.*;
+import gui_main.GUI;
+
+import java.io.IOException;
+import java.util.HashMap;
+
 
 public class ChanceCardManager {
 
-    public static ChanceCard[] cardArrayInit(){
+    public static ChanceCard[] cardArrayInit(Player currentPlayer, GUI gui, int newPosition, boolean positionSwitch) throws IOException {
         ChanceCard[] chanceCards = new ChanceCard[12];
+        HashMap<String,String> stringList = Language.languageInit("english");
 
-        chanceCards[0] = new ChooseColorCard(3,4,3,2,1,3,5,2,4);
+        //chanceCards[0] = new CharacterCard;
+        //chanceCards[1] = new MoveCard();
+        chanceCards[2] = new specificMoveCard(stringList.get("ChanceCard3"), null, null, currentPlayer, gui);
+        //chanceCards[3] = new ColorCard(stringList.get("ChanceCard4"), null, null, currentPlayer, gui);
+        //chanceCards[4] = new [1 skridt eller et kort metode](stringList.get("ChanceCard5"), null, null, currentPlayer, gui);
+        //chanceCards[5] = new CharacterCard(stringList.get("ChanceCard6"), null, null, currentPlayer, gui);
+        chanceCards[6] = new moveMoneyCard(stringList.get("ChanceCard7"), null, null, currentPlayer, gui, 2, 0, false);
+        chanceCards[7] = new ChooseColorCard(stringList.get("ChanceCard8"), null, null, currentPlayer, gui, 4,7, stringList.get("ColorOrange"), stringList.get("ColorGreen"));
+
+
+
+
+
 
     }
 

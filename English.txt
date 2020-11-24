@@ -16,44 +16,46 @@ winFalseButton
 EXIT
 StartField
 START
-BrugerbarField
-brugerbar.
+BurgerbarField
+Burgerbar
 PizzeriaField
-pizzeria.
+Pizzeria
 CandyStoreField
-candy store.
+Candy store
 IceCreamField
-ice cream store.
+Ice cream store
 MuseumField
-museum.
+Museum
 LibraryField
-library.
+Library
 SkateparkField
-skatepark.
-poolField
-pool.
+Skatepark
+PoolField
+Pool
 ArcadeField
-arcade.
+Arcade
 CinemaField
-cinema.
-toyStoreField
-toy store.
+Cinema
+ToyStoreField
+Toy store
 PetShopField
-pet shop.
+Pet shop
 BowlingAlleyField
-bowling alley.
+Bowling alley
 ZooField
-zoo.
+Zoo
 WaterParkField
-water park.
+Water park
 BoardwalkField
-boardwalk.
+Boardwalk
 ChanceCardField
-Chance card.
+Chance card
 FreeparkingField
-free parking.
+Free parking
 VisitJailField
-visit jail.
+Visit jail
+JailField
+Jail
 basisText1
 You have landed on the
 basisText2
@@ -61,7 +63,7 @@ it's an available property, and you buy it for
 basisText3
 Monopoly money
 basisText4
-The property is owend by
+The property is owned by
 basisText5
 and you owe
 basisText6

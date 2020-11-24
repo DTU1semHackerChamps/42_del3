@@ -83,7 +83,7 @@ public class Tile {
     public static Tile [] tileListInit(){
         Tile [] tiles = new Tile[24];
         Tile start = new Tile (stringList.get("StartField"),2,0,0);
-        Tile burgerbaren = new Tile (stringList.get("BrugerbarField"), -1,1,0);
+        Tile burgerbaren = new Tile (stringList.get("BurgerbarField"), -1,1,0);
         Tile pizzeriaet = new Tile (stringList.get("PizzeriaField"), -1, 1,0);
         Tile chanceKort = new Tile (stringList.get("ChanceCardField"), 0,0,0);
         Tile slikButikken = new Tile (stringList.get("CandyStoreField"), -1,2,0);
@@ -97,7 +97,7 @@ public class Tile {
         Tile spillehallen = new Tile (stringList.get("ArcadeField"), -3, 5,0);
         Tile biografen = new Tile (stringList.get("CinemaField"), -3, 5,0);
         Tile toyStore = new Tile (stringList.get("ToyStoreField"), -3,6,0);
-        Tile dyrehandlen = new Tile (stringList.get("PetshopField"), -3, 6,0);
+        Tile dyrehandlen = new Tile (stringList.get("PetShopField"), -3, 6,0);
         Tile goPrison = new Tile (stringList.get("JailField"), 0, 0,0);
         Tile bowlinghallen = new Tile (stringList.get("BowlingAlleyField"), -4,7,0);
         Tile zoo = new Tile (stringList.get("ZooField"), -4, 7,0);

@@ -22,6 +22,11 @@ public class ChanceCardManager {
         chanceCards[6] = new moveMoneyCard(stringList.get("ChanceCard7"), null, null, currentPlayer, gui, 2, 0, false);
         chanceCards[7] = new ChooseColorCard(stringList.get("ChanceCard8"), null, null, currentPlayer, gui, 4,7, stringList.get("ColorOrange"), stringList.get("ColorGreen"));
         //chanceCards[8] = new ColorCard(stringList.get("ChanceCard9"), null, null, currentPlayer, gui);
+        chanceCards[9] = new JailCard(stringList.get("ChanceCard10"), null, null, currentPlayer, gui);
+        chanceCards[10] = new moveMoneyCard(stringList.get("ChanceCard11"), null, null, currentPlayer, gui, 0, 23, true);
+        //chanceCards[11] = new CharacterCard(stringList.get("ChanceCard12"), null, null, currentPlayer, gui);
+        //chanceCards[12] = new CharacterCard(stringList.get("ChanceCard13"), null, null, currentPlayer, gui);
+        //chanceCards[13] = new BirthdayCard(stringList.get("ChanceCard14"), null, null, currentPlayer, gui);
 
 
 

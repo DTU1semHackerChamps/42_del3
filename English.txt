@@ -15,7 +15,7 @@ RESTART
 winFalseButton
 EXIT
 StartField
-You have landed on START, you will receive 2 Monopoly money when you pass.
+START
 BrugerbarField
 brugerbar.
 PizzeriaField
@@ -48,6 +48,8 @@ WaterParkField
 water park.
 BoardwalkField
 boardwalk.
+ChanceCardField
+Chance card
 basisText1
 You have landed on the
 basisText2

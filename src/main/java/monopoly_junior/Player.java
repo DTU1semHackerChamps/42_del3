@@ -7,15 +7,17 @@ public class Player {
     private int position;
     private String playerName;
     private boolean jailCard;
+    private int playerNum;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard){
+    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
         this.playerName = playerName;
+        this.playerNum = playerNum;
 
     }
 
@@ -82,5 +84,15 @@ public class Player {
 
     public String getPlayerName() {
         return playerName;
+    }
+
+
+
+    //
+
+    private Player[] players;
+
+    public PlayerList(int amount){
+
     }
 }

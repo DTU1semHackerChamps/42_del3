@@ -16,6 +16,7 @@ public class ChooseColorCard extends ChanceCard{
         this.color2 = color2;
         this.colorName1 = colorName1;
         this.colorName2 = colorName2;
+
     }
 
     @Override
@@ -24,7 +25,7 @@ public class ChooseColorCard extends ChanceCard{
         boolean ownerArray[] = new boolean[4];
         boolean if1 = false;
         boolean if2 = false;
-        boolean colorSelection;
+        boolean colorSelection = false;
 
         if(tiles[Tile.goToColor(color1)].getPropertyOwner() != 0){
             ownerArray[0] = true;
@@ -53,10 +54,16 @@ public class ChooseColorCard extends ChanceCard{
         }
 
         //If at least one property of each color is not owned or all properties are owned, you will get the selection between both colors.
-        if(!if1 || !if2){
+        if(!if1 && !if2){
             if(gui.getUserLeftButtonPressed("",colorName1,colorName2)){
                 colorSelection = true;
             }
+        }
+
+        if(colorSelection && (ownerArray[0] ^ ownerArray[1])){
+            gui.getUserButtonPressed("", colorName1);
+            tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNumber());
+
         }
 
 

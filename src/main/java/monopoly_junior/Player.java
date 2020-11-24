@@ -21,6 +21,17 @@ public class Player {
 
     }
 
+    public int getPlayerNum() {
+        return playerNum;
+    }
+
+    public void setPlayerNum(int playerNum) {
+        this.playerNum = playerNum;
+    }
+
+
+
+
     public void setJailCard(boolean jailCard) {
         this.jailCard = jailCard;
     }

@@ -103,7 +103,7 @@ public class Player {
 
     private Player[] players;
 
-    public PlayerList(int amount){
-
-    }
+//    public PlayerList(int amount){
+//
+//    }
 }

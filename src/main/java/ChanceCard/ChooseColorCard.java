@@ -61,11 +61,32 @@ public class ChooseColorCard extends ChanceCard{
         }
 
         if(colorSelection && (ownerArray[0] ^ ownerArray[1])){
-            gui.getUserButtonPressed("", colorName1);
-            tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNumber());
+
+            if(ownerArray[1]) {
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)].getTileName());
+                tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }else{
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)+1].getTileName());
+                tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
 
         }
 
+        if(colorSelection && (ownerArray[2] ^ ownerArray[3])){
+
+            if(ownerArray[2]) {
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)].getTileName());
+                tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+            }else{
+                gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)+1].getTileName());
+                tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+            }
+
+        }
+
+        if(colorSelection && !ownerArray[0] && !ownerArray[1]){
+
+        }
 
 
     }

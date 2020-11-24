@@ -120,3 +120,18 @@ ChanceCard19
 FREE PROPERTY! Move forward to ether a Lightblue or Red property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
 ChanceCard20
 FREE PROPERTY! Move forward to ether a Brown or Yellow property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ColorGreen
+Green
+ColorOrange
+Orange
+ColorLightblue
+Lightblue
+ColorPink
+Pink
+ColorDarkblue
+DarkBlue
+ColorRed
+Red
+ColorBrown
+Brown
+ColorYellow

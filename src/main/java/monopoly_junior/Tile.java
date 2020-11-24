@@ -83,26 +83,26 @@ public class Tile {
     public static Tile [] tileListInit(){
         Tile [] tiles = new Tile[24];
         Tile start = new Tile (stringList.get("StartField"),2,0,0);
-        Tile burgerbaren = new Tile ("BURGERBAREN", -1,1,0);
-        Tile pizzeriaet = new Tile ("PIZZERIAET", -1, 1,0);
-        Tile chanceKort = new Tile ("CHANCE", 0,0,0);
-        Tile slikButikken = new Tile ("SLIKBUTIKKEN", -1,2,0);
-        Tile isKiosken = new Tile ("ISKIOSKEN", -1, 2,0);
-        Tile visitPrison = new Tile ("PÅ BESØG I FÆNGSEL", 0,0,0);
-        Tile museet = new Tile ("MUSEET", -2,3,0);
-        Tile biblioteket = new Tile ("BIBLIOTEKET", -2,3,0);
-        Tile skaterparken = new Tile ("SKATERPARKEN", -2,4,0);
-        Tile swimmingpoolen = new Tile ("SWIMMINGPOOLEN",-2,4,0);
-        Tile gratisParking = new Tile ("GRATIS PARKING",0,0,0);
-        Tile spillehallen = new Tile ("SPILLEHALLEN", -3, 5,0);
-        Tile biografen = new Tile ("BIOGRAFEN", -3, 5,0);
-        Tile toyStore = new Tile ("LEGETØJSBUTIKKEN", -3,6,0);
-        Tile dyrehandlen = new Tile ("DYREHANDLEN", -3, 6,0);
-        Tile goPrison = new Tile ("GÅ I FÆNGSEL", 0, 0,0);
-        Tile bowlinghallen = new Tile ("BOWLINGHALLEN", -4,7,0);
-        Tile zoo = new Tile ("ZOO", -4, 7,0);
-        Tile vandlandet = new Tile ("VANDLANDET", -5, 8,0);
-        Tile strandpromenaden = new Tile ("STRANDPROMENADEN",-5, 8,0);
+        Tile burgerbaren = new Tile (stringList.get("BrugerbarField"), -1,1,0);
+        Tile pizzeriaet = new Tile (stringList.get("PizzeriaField"), -1, 1,0);
+        Tile chanceKort = new Tile (stringList.get("ChanceCardField"), 0,0,0);
+        Tile slikButikken = new Tile (stringList.get("CandyStoreField"), -1,2,0);
+        Tile isKiosken = new Tile (stringList.get("IceCreamField"), -1, 2,0);
+        Tile visitPrison = new Tile (stringList.get("VisitJailField"), 0,0,0);
+        Tile museet = new Tile (stringList.get("MuseumField"), -2,3,0);
+        Tile biblioteket = new Tile (stringList.get("LibraryField"), -2,3,0);
+        Tile skaterparken = new Tile (stringList.get("SkateparkField"), -2,4,0);
+        Tile swimmingpoolen = new Tile (stringList.get("PoolField"),-2,4,0);
+        Tile gratisParking = new Tile (stringList.get("FreeparkingField"),0,0,0);
+        Tile spillehallen = new Tile (stringList.get("ArcadeField"), -3, 5,0);
+        Tile biografen = new Tile (stringList.get("CinemaField"), -3, 5,0);
+        Tile toyStore = new Tile (stringList.get("ToyStoreField"), -3,6,0);
+        Tile dyrehandlen = new Tile (stringList.get("PetshopField"), -3, 6,0);
+        Tile goPrison = new Tile (stringList.get("JailField"), 0, 0,0);
+        Tile bowlinghallen = new Tile (stringList.get("BowlingAlleyField"), -4,7,0);
+        Tile zoo = new Tile (stringList.get("ZooField"), -4, 7,0);
+        Tile vandlandet = new Tile (stringList.get("WaterParkField"), -5, 8,0);
+        Tile strandpromenaden = new Tile (stringList.get("BoardwalkField"),-5, 8,0);
 
         // no color 1
         // brown 2

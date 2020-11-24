@@ -1,4 +1,74 @@
-winMessasge
-Du har vundet!
-rollMessasge
-Tryk OK for at kaste terningerne
+rollScreenMessage
+Tryk på ROLL for at rulle med terningen.
+rollButton
+ROLL
+startButtonMessage
+Tryk på SPIL for at spille spillet, eller EXIT for at lukke spillet.
+startTrueButton
+Spil
+startFalseButton
+EXIT
+winScreenMessage
+Du har vundet spillet! Tryk på 'GENSTART' eller 'EXIT'
+winTrueButton
+GENSTART
+winFalseButton
+EXIT
+StartField
+Du har landet på START, du vil modtage 2 Monopoly penge når du passerer.
+BrugerbarField
+brugerbaren.
+PizzeriaField
+pizzeriaet.
+CandyStoreField
+slikbutikken.
+IceCreamField
+iskiosken.
+MuseumField
+museet.
+LibraryField
+bibloteket.
+SkateparkField
+skaterparken.
+poolField
+swimmingpoolen.
+ArcadeField
+spillehallen.
+CinemaField
+biografen.
+toyStoreField
+lejetøjsbutikken.
+PetShopField
+dyrehandlen.
+BowlingAlleyField
+bowlinghallen.
+ZooField
+zoologisk have.
+WaterParkField
+vandlandet.
+BoardwalkField
+strandpromenaden.
+basisText1
+Du har landet på
+basisText2
+grunden er ledig, og du køber den for
+basisText3
+Monopoly penge
+basisText4
+Grunden er ejet af
+basisText5
+og du skylder
+basisText6
+i husleje
+playerTurn
+it is your turn. Press ROLL to roll.
+playerWin
+har vundet!
+typeName1
+Venligst skriv dit navn spiller 1.
+typeName2
+Venligst skriv dit navn spiller 2.
+typeName3
+Venligst skriv dit navn spiller 3.
+typeName4
+Venligst skriv dit navn spiller 4.

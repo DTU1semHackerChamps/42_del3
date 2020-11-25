@@ -30,7 +30,7 @@ public class ChanceCardManager {
         //chanceCards[13] = new BirthdayCard(stringList.get("ChanceCard14"), tiles, players, currentPlayer, gui);
         chanceCards[14] = new ChooseColorCard(stringList.get("ChanceCard15"), tiles, players, currentPlayer, gui, 3, 8, stringList.get("ColorPink"), stringList.get("ColorDarkblue"));
         chanceCards[15] = new moveMoneyCard(stringList.get("ChanceCard16"), tiles, players, currentPlayer, gui, 2, 0, false,false );
-        chanceCards[16] = new moveMoneyCard(stringList.get("ChanceCard17"), tiles, players, currentPlayer, gui, tiles[10].getBalanceChangeExtra(), 10, true, true);
+        chanceCards[16] = new moveMoneyCard(stringList.get("ChanceCard17"), tiles, players, currentPlayer, gui, tiles[10].getBalanceChangeExtra(tiles), 10, true, true);
         chanceCards[17] = new ColorCard(stringList.get("ChanceCard18"), tiles, players, currentPlayer, gui, 9, stringList.get("SkateparkField"));
         chanceCards[18] = new ChooseColorCard(stringList.get("ChanceCard19"), tiles, players, currentPlayer, gui, 2, 5, stringList.get("ColorLightblue"), stringList.get("ColorRed"));
         chanceCards[19] = new ChooseColorCard(stringList.get("ChanceCard20"), tiles, players, currentPlayer, gui, 1, 6, stringList.get("ColorBrown"), stringList.get("ColorYellow"));

@@ -32,7 +32,6 @@ public class Main {
         GUI_Player gui_Player2 = Displaymanager.displayAddPlayer(gui, fields, player2.getPlayerName(), player2.getBalance(), false);
 
         do{
-
             //Default game values restored
             player1.setPosition(1);
             player2.setPosition(1);

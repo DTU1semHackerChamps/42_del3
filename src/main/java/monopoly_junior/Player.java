@@ -7,17 +7,30 @@ public class Player {
     private int position;
     private String playerName;
     private boolean jailCard;
+    private int playerNum;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard){
+    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
         this.playerName = playerName;
+        this.playerNum = playerNum;
 
     }
+
+    public int getPlayerNum() {
+        return playerNum;
+    }
+
+    public void setPlayerNum(int playerNum) {
+        this.playerNum = playerNum;
+    }
+
+
+
 
     public void setJailCard(boolean jailCard) {
         this.jailCard = jailCard;
@@ -74,13 +87,6 @@ public class Player {
      * Checks if winning requirement is reached
      * @return returns if a player has won
      */
-    public boolean hasWon(){
-        boolean winStatus = false;
-        if(balance >= 3000){
-            winStatus = true;
-        }
-        return winStatus;
-    }
 
 
     public void setPlayerName(String playerName) {
@@ -90,4 +96,37 @@ public class Player {
     public String getPlayerName() {
         return playerName;
     }
+
+
+
+    // From here new code added by Zahed.
+
+
+//    private boolean isDeath;
+//    private boolean isWinner;
+
+//    public  void PlayerSartPos(){
+//        balance = 0;
+//        isDeath = false;
+//        isWinner = false;
+//
+//
+//    }
+
+     String[] player;
+
+    public void PlayerList(int numOfPlayer){
+
+        for (int i = 0; i < numOfPlayer; i++) {
+            player = new String[i];
+        }
+
+    }
+
+    public int nextPlayer(int index){
+        index = ++index % player.length;
+        return index;
+    }
+
+
 }

@@ -52,6 +52,12 @@ public class Player {
         return balance;
     }
 
+    public void payRent(Player [] players, Player currentPlayer, int balanceChange, int owner){
+        if((currentPlayer.getPlayerNum() != owner) && (owner != 0)) {
+            currentPlayer.addBalance(-balanceChange);
+            players[owner].addBalance(balanceChange);
+        }
+    }
     public int addBalance(int tileBalanceChange){
         balance += tileBalanceChange;
         if (balance < 0){

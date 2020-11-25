@@ -5,6 +5,7 @@ import gui_main.GUI;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class ChanceCardManager {
@@ -37,11 +38,18 @@ public class ChanceCardManager {
         return chanceCards;
     }
 
-    public static void cardShuffle(){
-    ChanceCard[] chanceCards = cardArrayInit()
-        for (int i = 0; i < 1000; i++) {
+    public static void cardShuffle(ChanceCard[] cardList){
 
-
+        int index;
+        ChanceCard temp;
+        Random random = new Random();
+        for (int i = cardList.length - 1; i >= 0; i--)
+        {
+            index = random.nextInt(i+1);
+            temp = cardList[index];
+            cardList[index] = cardList[i];
+            cardList[i] = temp;
+            System.out.println(cardList[i]);
         }
 
     }

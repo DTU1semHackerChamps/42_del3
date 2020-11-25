@@ -1,6 +1,6 @@
 package monopoly_junior;
 
-import ChanceCard.JailCard;
+import java.util.Arrays;
 
 public class Player {
     private int balance;
@@ -34,6 +34,9 @@ public class Player {
 
     public void setJailCard(boolean jailCard) {
         this.jailCard = jailCard;
+    }
+    public boolean getJailCard() {
+        return jailCard;
     }
 
     public boolean isJailCard() {
@@ -113,15 +116,19 @@ public class Player {
 //
 //    }
 
-     String[] player;
 
-    public void PlayerList(int numOfPlayer){
 
-        for (int i = 0; i < numOfPlayer; i++) {
+    public String[] player;
+
+    public void playerList(int numOfPlayer){
+
+
+        for (int i = 0; i <= numOfPlayer; i++) {
             player = new String[i];
         }
-
     }
+
+
 
     public int nextPlayer(int index){
         index = ++index % player.length;

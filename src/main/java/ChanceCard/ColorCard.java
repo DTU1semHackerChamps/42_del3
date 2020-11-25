@@ -27,6 +27,10 @@ public class ColorCard extends ChanceCard {
         boolean owner2 = false;
         boolean selection = false;
 
+        //The til for the Skatepark
+        if(color == 9){
+            currentPlayer.setPosition(10);
+        }
 
         if(tiles[Tile.goToColor(color)].getPropertyOwner() != 0){
             owner1 = true;

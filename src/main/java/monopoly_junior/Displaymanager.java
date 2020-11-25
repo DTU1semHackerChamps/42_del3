@@ -53,15 +53,15 @@ public class Displaymanager {
 
         /* HSB colors
         BoardBackground H:0.35f S:0.19f B:0.87f
-        White H = 0.5f; S = 0f; B = 0.98f;
-        Brown H = 0.05f; S = 0.64f; B = 0.58f;
-        LightBlue H = 0.56f; S = 0.27f; B = 0.96f;
-        Magenta H = 0.91f; S = 0.67f; B = 0.83f;
-        Orange H = 0.09f; S = 0.87f; B = 0.97f;
-        Red H = 1.00f; S = 0.85f; B = 0.94f;
-        Yellow H = 0.15f; S = 0.83f; B = 0.98f;
-        Green H = 0.37f; S = 0.76f; B = 0.66f;
-        Blue H = 0.57f; S = 0.92f; B = 0.72f;
+        0 : White H = 0.5f; S = 0f; B = 0.98f;
+        1 : Brown H = 0.05f; S = 0.64f; B = 0.58f;
+        2 : LightBlue H = 0.56f; S = 0.27f; B = 0.96f;
+        3 : Magenta H = 0.91f; S = 0.67f; B = 0.83f;
+        4 : Orange H = 0.09f; S = 0.87f; B = 0.97f;
+        5 : Red H = 1.00f; S = 0.85f; B = 0.94f;
+        6 : Yellow H = 0.15f; S = 0.83f; B = 0.98f;
+        7 : Green H = 0.37f; S = 0.76f; B = 0.66f;
+        8 : Blue H = 0.57f; S = 0.92f; B = 0.72f;
 
          */
 

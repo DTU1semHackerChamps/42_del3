@@ -30,7 +30,7 @@ public class moveMoneyCard extends ChanceCard {
                     tiles[10].setPropertyOwner(currentPlayer.getPlayerNum());
 
                 }else{
-                    players.
+                    currentPlayer.payRent(players, currentPlayer, balanceChange, tiles[10].getPropertyOwner());
                 }
 
 

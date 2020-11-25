@@ -7,12 +7,14 @@ public class moveMoneyCard extends ChanceCard {
     private int balanceChange;
     private int newPosition;
     private boolean positionSwitch;
+    private boolean skatePark;
 
-    public moveMoneyCard(String cardDescription, Tile[] tiles, Player[] players, Player currentPlayer, GUI gui, int balanceChange, int newPosition, boolean positionSwitch) {
+    public moveMoneyCard(String cardDescription, Tile[] tiles, Player[] players, Player currentPlayer, GUI gui, int balanceChange, int newPosition, boolean positionSwitch, boolean skatePark) {
         super(cardDescription, tiles, players, currentPlayer, gui);
         this.balanceChange = balanceChange;
         this.newPosition = newPosition;
         this.positionSwitch = positionSwitch;
+        this.skatePark = skatePark;
     }
 
     @Override
@@ -22,6 +24,17 @@ public class moveMoneyCard extends ChanceCard {
 
         if(positionSwitch){
             currentPlayer.setPosition(newPosition);
+            if(skatePark){
+                currentPlayer.setPosition(10);
+                if(tiles[10].getPropertyOwner() != 0){
+                    tiles[10].setPropertyOwner(currentPlayer.getPlayerNum());
+
+                }else{
+                    players.
+                }
+
+
+            }
         }
     }
 }

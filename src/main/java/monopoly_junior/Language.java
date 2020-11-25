@@ -28,7 +28,7 @@ public class Language {
 
         HashMap<String, String> langList = new HashMap<>();
 
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 69; i++) {
             langList.put(reader.readLine(), reader.readLine());
 
         }

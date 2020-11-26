@@ -14,35 +14,125 @@ winTrueButton
 RESTART
 winFalseButton
 EXIT
-tileText1
-You have traveled far and wide, welcome back home.
-tileText2
-You caught the big fish in the lake! Your have won 250
-tileText3
-Take it easy! You loss 100
-tileText4
-AAA HU, was that what you were looking for? You have won 100
-tileText5
-Don't give up, still something out of nothing! You have lost 20
-tileText6
-How was that? You have won a gold seal, save it for next. You have won 180
-tileText7
-Keep testing your luck! You have won 0
-tileText8
-Don't move! Santa is coming with the socks. You have lost 70
-tileText9
-Be the real hunter! You have won 60
-tileText10
-Better luck for the next turn! You have won an extra turn, though lost 80
-tileText11
-The sun rises after the darkest! You have lost 50
-tileText12
-You have won black diamond in the jungle, sell it for 650, make you self reach. You have won 650
+StartField
+START
+BurgerbarField
+Burgerbar
+PizzeriaField
+Pizzeria
+CandyStoreField
+Candy store
+IceCreamField
+Ice cream store
+MuseumField
+Museum
+LibraryField
+Library
+SkateparkField
+Skatepark
+PoolField
+Pool
+ArcadeField
+Arcade
+CinemaField
+Cinema
+ToyStoreField
+Toy store
+PetShopField
+Pet shop
+BowlingAlleyField
+Bowling alley
+ZooField
+Zoo
+WaterParkField
+Water park
+BoardwalkField
+Boardwalk
+ChanceCardField
+Chance card
+FreeparkingField
+Free parking
+VisitJailField
+Visit jail
+JailField
+Jail
+basisText1
+You have landed on the
+basisText2
+it's an available property, and you buy it for
+basisText3
+Monopoly money
+basisText4
+The property is owned by
+basisText5
+and you owe
+basisText6
+in rent
 playerTurn
 it is your turn. Press ROLL to roll.
 playerWin
 has won!
-typeName1
-Please type your name player 1.
-typeName2
-Please type your name player 2.
+CatCharacter
+Cat
+DogCharacter
+Dog
+BoatCharacter
+Boat
+CarCharacter
+Car
+ChanceCard1
+Give this card to the Car, and draw another chance card. Car: On your next turn, move forward to whatever free property you want and buy it. if there is no available property, buy one from another player!
+ChanceCard2
+Move forward to START and receive 2 Monopoly money.
+ChanceCard3
+Move up to 5 fields forward
+ChanceCard4
+FREE PROPERTY! Move forward to a Orange property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard5
+Move 1 field forward, OR draw another chance card.
+ChanceCard6
+Give this card to the Ship, and draw another chance card. Ship: On your next turn, move forward to whatever free property you want and buy it. if there is no available property, buy one from another player!
+chanceCard7
+You have eaten too much candy. PAY 2 monopoly money to the bank.
+ChanceCard8
+FREE PROPERTY! Move forward to ether a Orange or Green property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard9
+FREE PROPERTY! Move forward to a Lightblue property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard10
+You get out of jail without any expenses. Keep this card until you need it.
+ChanceCard11
+Move forward to the boardwalk.
+ChanceCard12
+Give this card to the Cat, and draw another chance card. Cat: On your next turn, move forward to whatever free property you want and buy it. if there is no available property, buy one from another player!
+ChanceCard13
+Give this card to the Dog, and draw another chance card. Dog: On your next turn, move forward to whatever free property you want and buy it. if there is no available property, buy one from another player!
+ChanceCard14
+It's your birthday! Everyone gives you 1 Monopoly money. HAPPY BIRTHDAY!
+ChanceCard15
+FREE PROPERTY! Move forward to ether a Pink or Darkblue property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard16
+You have done all your homework! Receive 2 Monopoly money from the bank.
+ChanceCard17
+FREE PROPERTY! Move forward to a Red property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard18
+FREE PROPERTY! Move forward to the SkatePark, and perform the perfect grind! If there is no owner, get it for FREE! otherwise pay rent to the owner.
+ChanceCard19
+FREE PROPERTY! Move forward to ether a Lightblue or Red property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ChanceCard20
+FREE PROPERTY! Move forward to ether a Brown or Yellow property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+ColorGreen
+Green
+ColorOrange
+Orange
+ColorLightblue
+Lightblue
+ColorPink
+Pink
+ColorDarkblue
+DarkBlue
+ColorRed
+Red
+ColorBrown
+Brown
+ColorYellow
+Yellow

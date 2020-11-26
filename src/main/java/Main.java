@@ -6,7 +6,9 @@ import gui_main.GUI;
 import monopoly_junior.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        Tile[] tiles = Tile.tileListInit();
 
         //tileList initialized with the tileListInit() method which is a set list
         Tile[] tileList = Tile.tileListInit();
@@ -16,22 +18,21 @@ public class Main {
 
         String[] tileTexts = Language.tileTexts(stringList);
 
-        Dice dice1 = new Dice(0);
-        Dice dice2 = new Dice(0);
-        int sumOfDice;
+        Dice dice = new Dice(0);
+
 
         // Gui field initialized for use in everything related to the GUI
-        GUI_Field[] fields = new GUI_Field[16];
+        GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(fields);
-        Player player1 = new Player(1000, 1, true, gui.getUserString(stringList.get("typeName1")));
-        Player player2 = new Player(1000, 1, false, gui.getUserString(stringList.get("typeName2")));
 
+        Player[]
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
-        Player currentPlayer = new Player(0,0,false,"");
+        Player currentPlayer = new Player(0,0,false,"", false);
         GUI_Player gui_Player1 = Displaymanager.displayAddPlayer(gui, fields, player1.getPlayerName(), player1.getBalance(), true);
         GUI_Player gui_Player2 = Displaymanager.displayAddPlayer(gui, fields, player2.getPlayerName(), player2.getBalance(), false);
 
         do{
+
             //Default game values restored
             player1.setPosition(1);
             player2.setPosition(1);
@@ -41,7 +42,7 @@ public class Main {
             player2.setPlayerTurn(false);
             gui_Player1.setBalance(player1.getBalance());
             gui_Player2.setBalance(player2.getBalance());
-            Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2);
+            Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2, 0);
 
             // While loop for the turns of the game
             while(Displaymanager.rollScreen(gui, Displaymanager.displayPlayerTurn(player1.getPlayerTurn(),stringList,player1.getPlayerName(),player2.getPlayerName()), stringList.get("rollButton"))){
@@ -54,14 +55,14 @@ public class Main {
                 // updating the balance of current player corresponding to the set balance amount of a tile
                 currentPlayer.addBalance(tileList[currentPlayer.getPosition()].getBalanceChange());
                 // Determining if the current player gets an extra turn
-                Player.extraTurn(player1, tileList[currentPlayer.getPosition()].isExtraTurn());
+
 
                 // Updating the balance of the players in the gui
                 gui_Player1.setBalance(player1.getBalance());
                 gui_Player2.setBalance(player2.getBalance());
 
                 // Updating the position, the dice of the players in the gui
-                Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2);
+                Displaymanager.displayPosition(fields, player1.getPosition(), player2.getPosition(), gui_Player1, gui_Player2, sumOfDice);
                 Displaymanager.displayDice(gui, dice1.getFaceValue(), dice2.getFaceValue());
                 // Displays the tiles Text when player moves there as a pop-up.
                 Displaymanager.displayTileText(tileTexts,currentPlayer.getPosition(), gui);
@@ -70,7 +71,8 @@ public class Main {
                     break;
                 }
             }
-        // Win screen gives the option to either restart or exit the game.
+            // Win screen gives the option to either restart or exit the game.
         }while (Displaymanager.winScreen(gui,Displaymanager.displayPlayerWin(player1.getPlayerTurn(),stringList,player1.getPlayerName(), player2.getPlayerName()),stringList.get("winTrueButton"), stringList.get("winFalseButton")));
     }
+
 }

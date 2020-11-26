@@ -5,9 +5,11 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 import gui_fields.GUI_Street;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Board;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Displaymanager {
 
@@ -27,7 +29,9 @@ public class Displaymanager {
      */
 
     public static void displayDice(GUI gui,int dice1, int dice2){
-        gui.setDice(dice1,dice2);
+        //gui.setDice(dice1,dice2);
+        gui.setDice(dice1,4,1,dice2,5,1);
+
 
     }
 
@@ -45,28 +49,59 @@ public class Displaymanager {
         GUI.setNull_fields_allowed(true);
         Tile[] tiles = Tile.tileListInit();
         String tileBalance, tileName;
-        int j = 0;
+        float H = 0, S = 0,B = 0;
 
-        for (int i = 0; i < 16; i++) {
+        /* HSB colors
+        BoardBackground H:0.35f S:0.19f B:0.87f
+        0 : White H = 0.5f; S = 0f; B = 0.98f;
+        1 : Brown H = 0.05f; S = 0.64f; B = 0.58f;
+        2 : LightBlue H = 0.56f; S = 0.27f; B = 0.96f;
+        3 : Magenta H = 0.91f; S = 0.67f; B = 0.83f;
+        4 : Orange H = 0.09f; S = 0.87f; B = 0.97f;
+        5 : Red H = 1.00f; S = 0.85f; B = 0.94f;
+        6 : Yellow H = 0.15f; S = 0.83f; B = 0.98f;
+        7 : Green H = 0.37f; S = 0.76f; B = 0.66f;
+        8 : Blue H = 0.57f; S = 0.92f; B = 0.72f;
 
-            j++;
-            if ((i == 0) || (i == 4) || (i == 8) || (i == 12)) {
-             j--;
-            }
-            else {
-                tileBalance = Integer.toString(tiles[j].getBalanceChange());
-                tileName = tiles[j].getTileName();
+         */
 
+        for (int i = 0; i < tiles.length; i++) {
+
+
+                tileBalance = Integer.toString(tiles[i].getBalanceChange());
+                tileName = tiles[i].getTileName();
+
+                switch (tiles[i].getColor()){
+                    case 0 :H = 0.5f; S = 0f; B = 0.98f;
+                        break;
+                    case 1 :H = 0.05f; S = 0.64f; B = 0.58f;
+                        break;
+                    case 2 :H = 0.56f; S = 0.27f; B = 0.96f;
+                        break;
+                    case 3 :H = 0.91f; S = 0.67f; B = 0.83f;
+                        break;
+                    case 4 :H = 0.09f; S = 0.87f; B = 0.97f;
+                        break;
+                    case 5 :H = 1.00f; S = 0.85f; B = 0.94f;
+                        break;
+                    case 6 :H = 0.15f; S = 0.83f; B = 0.98f;
+                        break;
+                    case 7 :H = 0.37f; S = 0.76f; B = 0.66f;
+                        break;
+                    case 8 :H = 0.57f; S = 0.92f; B = 0.72f;
+                        break;
+
+                }
 
                 GUI_Street street = new GUI_Street();
                 street.setTitle(tileName);
-                street.setSubText(tileBalance);
+                street.setSubText("M" + tileBalance);
 
                 fields[i] = street;
-                fields[i].setBackGroundColor(Color.getHSBColor((float)Math.random(),(float)0.50,(float)0.85));
+                fields[i].setBackGroundColor(Color.getHSBColor(H,S,B));
             }
-        }
-        GUI gui = new GUI(fields,Color.getHSBColor((float)Math.random(),(float)0.60,(float)0.75));
+
+        GUI gui = new GUI(fields,Color.getHSBColor((float)0.355,(float)0.19,(float)0.87));
 
 
         return gui;
@@ -125,50 +160,29 @@ public class Displaymanager {
      * @param gui_Player1 The GUI_Player one used to change the car position
      * @param gui_Player2 The GUI_Player two used to change the car position
      */
-    public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2){
+    public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2, int diceSum) throws InterruptedException {
 
 
-        for (int i = 1; i < 16; i++) {
-            if ((i == 4)||(i == 8)||(i == 12)) {
+//        for (int i = 0; i < 24; i++) {
+//
+//            fields[i].removeAllCars();
+//            fields[i].setCar(gui_Player1, false);
+//            fields[i].setCar(gui_Player2, false);
+//
+//        }
 
-            } else {
-                fields[i].removeAllCars();
-            }
-        }
-        switch (positionPlayer1) {
-            case 4:
-            case 5:
-            case 6: positionPlayer1 += 1;
-                break;
-            case 7:
-            case 8:
-            case 9: positionPlayer1 += 2;
-                break;
-            case 10:
-            case 11:
-            case 12: positionPlayer1 += 3;
-                break;
-        }
-
-        switch (positionPlayer2) {
-            case 4:
-            case 5:
-            case 6: positionPlayer2 += 1;
-                break;
-            case 7:
-            case 8:
-            case 9: positionPlayer2 += 2;
-                break;
-            case 10:
-            case 11:
-            case 12: positionPlayer2 += 3;
-                break;
-
-        }
-
-        fields[positionPlayer1].setCar(gui_Player1, true);
         fields[positionPlayer2].setCar(gui_Player2, true);
+        int lastPlayerPos = Math.abs(positionPlayer1 - diceSum);
 
+        fields[lastPlayerPos].setCar(gui_Player1, false);
+        for (int j = lastPlayerPos; j <= positionPlayer1; j++) {
+
+                fields[j].setCar(gui_Player1, true);
+                Thread.sleep(250);
+                fields[j].setCar(gui_Player1, false);
+
+        }
+        fields[positionPlayer1].setCar(gui_Player1, true);
     }
 
     /**

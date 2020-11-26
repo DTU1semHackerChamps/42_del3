@@ -34,7 +34,7 @@ public class Tile {
         Tile chanceCard = new Tile (stringList.get("ChanceCardField"), 0,0,0);
         Tile candyStore = new Tile (stringList.get("CandyStoreField"), 1,2,0);
         Tile iceCreamKiosk = new Tile (stringList.get("IceCreamField"), 1, 2,0);
-        Tile visitPrison = new Tile (stringList.get("VisitJailField"), 0,0,0);
+        Tile visitPrison = new Tile (stringList.get("JailField"), 0,0,0);
         Tile museum = new Tile (stringList.get("MuseumField"), 2,3,0);
         Tile library = new Tile (stringList.get("LibraryField"), 2,3,0);
         Tile skatepark = new Tile (stringList.get("SkateparkField"), 2,4,0);
@@ -44,7 +44,7 @@ public class Tile {
         Tile cinema = new Tile (stringList.get("CinemaField"), 3, 5,0);
         Tile toyStore = new Tile (stringList.get("ToyStoreField"), 3,6,0);
         Tile petShop = new Tile (stringList.get("PetShopField"), 3, 6,0);
-        Tile goPrison = new Tile (stringList.get("JailField"), 0, 0,0);
+        Tile goPrison = new Tile (stringList.get("GoToJailField"), 0, 0,0);
         Tile bowlingAlley = new Tile (stringList.get("BowlingAlleyField"), 4,7,0);
         Tile zoo = new Tile (stringList.get("ZooField"), 4, 7,0);
         Tile waterPark = new Tile (stringList.get("WaterParkField"), 5, 8,0);

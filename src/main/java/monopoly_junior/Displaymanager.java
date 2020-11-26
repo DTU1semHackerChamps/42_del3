@@ -95,7 +95,16 @@ public class Displaymanager {
 
                 GUI_Street street = new GUI_Street();
                 street.setTitle(tileName);
-                street.setSubText("M" + tileBalance);
+                if(tileBalance.equals(Integer.toString(tiles[3].getBalanceChange()))){
+                    street.setSubText("");
+                    if(tileName == tiles[6].getTileName()){
+                        street.setTitle(tileName);
+                        street.setSubText(stringList.get("VisitJailField"));
+                    }
+                }else {
+                    street.setSubText("M" + tileBalance);
+                }
+                 street.setDescription(" ");
 
                 fields[i] = street;
                 fields[i].setBackGroundColor(Color.getHSBColor(H,S,B));
@@ -239,7 +248,10 @@ public class Displaymanager {
      public static void updatePropertyOwners(GUI gui, GUI_Field[] fields, Tile[] tiles, Player[] players){
          for (int i = 0; i < fields.length; i++) {
              if(tiles[i].getPropertyOwner() != 0) {
-                 fields[i].setDescription(players[tiles[i].getPropertyOwner() - 1].getPlayerName());
+                 fields[i].setDescription("Owner: " + players[tiles[i].getPropertyOwner() - 1].getPlayerName());
+                 if(tiles[i].getBalanceChange() == 0){
+                     fields[i].setDescription("");
+                 }
              }
          }
 

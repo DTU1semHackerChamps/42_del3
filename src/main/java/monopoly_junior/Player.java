@@ -58,6 +58,7 @@ public class Player {
             players[owner].addBalance(balanceChange);
         }
     }
+
     public int addBalance(int tileBalanceChange){
         balance += tileBalanceChange;
         if (balance < 0){

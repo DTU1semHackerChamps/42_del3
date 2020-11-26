@@ -55,7 +55,7 @@ Free parking
 VisitJailField
 Visit jail
 JailField
-Jail
+Go to Jail
 basisText1
 You have landed on the
 basisText2

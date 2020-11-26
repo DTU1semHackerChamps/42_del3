@@ -94,7 +94,7 @@ public class Player {
        position += faceValue;
 
        if(position > 23){
-            position -= 23;
+            position -= 24;
        }
        return position;
     }

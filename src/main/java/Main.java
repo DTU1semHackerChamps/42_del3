@@ -50,11 +50,16 @@ public class Main {
                 currentPlayer.addPosition(dice.getFaceValue());
                 currentPlayer.addBalance(tileList[currentPlayer.getPosition()].tileAvailable(currentPlayer.getPlayerNum()));
                 Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+                Displaymanager.updatePlayerBalance(gui, gui_Players, players);
+                Displaymanager.updatePropertyOwners(gui,fields,tileList,players);
                 currentPlayer.saveLastPlayerPosition();
                 if((currentPlayer.getPosition() == 3) || (currentPlayer.getPosition() == 9) || (currentPlayer.getPosition() == 15) || (currentPlayer.getPosition() == 21)){
                     ChanceCardManager.drawCard(index,cards,currentPlayer);
                 }
                 Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+                Displaymanager.updatePlayerBalance(gui, gui_Players, players);
+                Displaymanager.updatePropertyOwners(gui,fields,tileList,players);
+
 
 
 

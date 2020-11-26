@@ -30,7 +30,7 @@ public class Displaymanager {
 
     public static void displayDice(GUI gui,int dice1){
         //gui.setDice(dice1,dice2);
-        gui.setDice(dice1,4,1,dice1,4,1);
+        gui.setDice(dice1,5,1,dice1,5,1);
 
 
     }
@@ -228,6 +228,22 @@ public class Displaymanager {
         }
         return thisText;
     }
+
+    public static void  updatePlayerBalance(GUI gui, GUI_Player[] guiPlayer, Player[] players){
+        for (int i = 0; i < players.length; i++) {
+            guiPlayer[i].setBalance(players[i].getBalance());
+        }
+
+    }
+
+     public static void updatePropertyOwners(GUI gui, GUI_Field[] fields, Tile[] tiles, Player[] players){
+         for (int i = 0; i < fields.length; i++) {
+             if(tiles[i].getPropertyOwner() != 0) {
+                 fields[i].setDescription(players[tiles[i].getPropertyOwner() - 1].getPlayerName());
+             }
+         }
+
+     }
 
     /**
      * Used to display the tile text of the current position after a roll.

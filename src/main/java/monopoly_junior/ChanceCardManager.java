@@ -24,7 +24,7 @@ public class ChanceCardManager {
         chanceCards[8] = new ChooseColorCard(stringList.get("ChanceCard15"), tiles, players, currentPlayer, gui, 3, 8, stringList.get("ColorPink"), stringList.get("ColorDarkblue"));
         chanceCards[9] = new moveMoneyCard(stringList.get("ChanceCard16"), tiles, players, currentPlayer, gui, 2, 0, false,false );
         chanceCards[10] = new moveMoneyCard(stringList.get("ChanceCard17"), tiles, players, currentPlayer, gui, tiles[10].getBalanceChangeExtra(tiles), 10, true, true);
-        chanceCards[11] = new ColorCard(stringList.get("ChanceCard18"), tiles, players, currentPlayer, gui, 9, stringList.get("SkateparkField"));
+        chanceCards[11] = new moveMoneyCard(stringList.get("ChanceCard18"), tiles, players, currentPlayer, gui, 0, 10, true, true);
         chanceCards[12] = new ChooseColorCard(stringList.get("ChanceCard19"), tiles, players, currentPlayer, gui, 2, 5, stringList.get("ColorLightblue"), stringList.get("ColorRed"));
         chanceCards[13] = new ChooseColorCard(stringList.get("ChanceCard20"), tiles, players, currentPlayer, gui, 1, 6, stringList.get("ColorBrown"), stringList.get("ColorYellow"));
 

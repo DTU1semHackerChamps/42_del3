@@ -22,4 +22,6 @@ public abstract class ChanceCard {
 
      public abstract void useChanceCard();
 
+    public abstract void setCurrentPlayer(Player currentPlayer);
+
 }

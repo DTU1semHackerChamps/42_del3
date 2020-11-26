@@ -78,5 +78,10 @@ public class ColorCard extends ChanceCard {
 
 
     }
+
+    @Override
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 }
 

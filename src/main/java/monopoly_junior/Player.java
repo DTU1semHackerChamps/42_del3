@@ -1,6 +1,9 @@
 package monopoly_junior;
 
 import ChanceCard.JailCard;
+import gui_main.GUI;
+
+import java.util.HashMap;
 
 public class Player {
     private int balance;
@@ -122,12 +125,48 @@ public class Player {
 
      String[] player;
 
-    public void PlayerList(int numOfPlayer){
+    public static Player[] PlayerList(HashMap<String, String> stringList, GUI gui){
+        String playerName = "";
+        int numOfPlayer = 0;
 
-        for (int i = 0; i < numOfPlayer; i++) {
-            player = new String[i];
+        numOfPlayer = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChooseCharacter1"), "2", "3", "4"),10);
+
+        Player[] players = new Player[numOfPlayer];
+
+        String[] names = {stringList.get("CarCharacter"), stringList.get("CatCharacter"), stringList.get("DogCharacter"), stringList.get("BoatCharacter")};
+
+
+        for (int i = 1; i <= numOfPlayer; i++) {
+            do{
+                playerName = gui.getUserButtonPressed(stringList.get("ChooseCharacter2") + " " + i + ".", names[0], names[1], names[2], names[3]);
+                if(playerName.equals(names[0])){
+                    names[0] = " ";
+                }
+                if(playerName.equals(names[1])){
+                    names[1] = " ";
+                }
+                if(playerName.equals(names[2])){
+                    names[2] = " ";
+                }
+                if(playerName.equals(names[3])){
+                    names[3] = " ";
+                }
+
+            }while (playerName.equals(" "));
+
+            switch (numOfPlayer){
+                case 2: players[i-1] = new Player(20,0,playerName,false, i);
+                    break;
+                case 3: players[i-1] = new Player(18,0,playerName,false, i);
+                    break;
+                case 4: players[i-1] = new Player(16,0,playerName,false, i);
+                    break;
+            }
+
+
+
         }
-
+    return players;
     }
 
     public int nextPlayer(int index){

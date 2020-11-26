@@ -112,24 +112,37 @@ public class Displaymanager {
      * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player
      * @param gui The current GUI
      * @param fields The current GUI_Field[]
-     * @param name The name displayed in the GUI by the score
-     * @param balance The score number displayed
-     * @param color True for blue player and false for red
+     * @param player The name displayed in the GUI by the score
      * @return
      */
-    public static GUI_Player displayAddPlayer(GUI gui, GUI_Field[] fields, String name, int balance, boolean color){
-        GUI_Car car1 = new GUI_Car();
-        if(color) {
-            car1.setPrimaryColor(Color.blue);
-        }
-        else{
-            car1.setPrimaryColor(Color.red);
-        }
-        GUI_Player gui_Player = new GUI_Player(name,balance, car1);
-        gui.addPlayer(gui_Player);
-        fields[1].setCar(gui_Player, true);
+    public static GUI_Player[] displayAddPlayer(HashMap<String, String> stringList, GUI gui, GUI_Field[] fields, Player[] player){
 
-        return gui_Player;
+
+        GUI_Player[] guiPlayerList = new GUI_Player[4];
+
+        for (int i = 0; i < player.length; i++) {
+            GUI_Car carColor = new GUI_Car();
+
+            if(stringList.get("CatCharacter").equals(player[i].getPlayerName())) {
+                carColor.setPrimaryColor(Color.orange);
+            }
+            else if(stringList.get("DogCharacter").equals(player[i].getPlayerName())){
+                carColor.setPrimaryColor(Color.black);
+            }
+            else if(stringList.get("CarCharacter").equals(player[i].getPlayerName())){
+                carColor.setPrimaryColor(Color.green);
+            }
+            else if(stringList.get("BoatCharacter").equals(player[i].getPlayerName())){
+                carColor.setPrimaryColor(Color.blue);
+            }
+
+            GUI_Player gui_Player = new GUI_Player(player[i].getPlayerName(),player[i].getBalance(), carColor);
+            gui.addPlayer(gui_Player);
+            fields[0].setCar(gui_Player, true);
+            guiPlayerList[i] = gui_Player;
+        }
+
+        return guiPlayerList;
     }
 
     /**

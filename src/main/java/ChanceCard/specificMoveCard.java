@@ -21,4 +21,9 @@ public class specificMoveCard extends ChanceCard {
         currentPlayer.addPosition(addPosition);
 
     }
+
+    @Override
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 }

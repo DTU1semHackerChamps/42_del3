@@ -37,4 +37,9 @@ public class moveMoneyCard extends ChanceCard {
             }
         }
     }
+
+    @Override
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 }

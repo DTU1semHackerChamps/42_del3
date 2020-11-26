@@ -14,4 +14,11 @@ public class JailCard extends ChanceCard {
         gui.showMessage(cardDescription);
         currentPlayer.setJailCard(true);
     }
+
+    @Override
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+
 }

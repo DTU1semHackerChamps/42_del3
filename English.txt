@@ -80,6 +80,10 @@ BoatCharacter
 Boat
 CarCharacter
 Car
+ChooseCharacter1
+Please pick the number of players.
+ChooseCharacter2
+Please pick your character player
 ChanceCard1
 Give this card to the Car, and draw another chance card. Car: On your next turn, move forward to whatever free property you want and buy it. if there is no available property, buy one from another player!
 ChanceCard2

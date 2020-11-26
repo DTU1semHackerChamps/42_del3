@@ -10,12 +10,6 @@ public class Main {
 
         Tile[] tiles = Tile.tileListInit();
 
-        System.out.println(tiles[1].getBalanceChangeExtra(tiles));
-        tiles[1].setPropertyOwner(1);
-        System.out.println(tiles[1].getBalanceChangeExtra(tiles));
-        tiles[2].setPropertyOwner(1);
-        System.out.println(tiles[1].getBalanceChangeExtra(tiles));
-
         //tileList initialized with the tileListInit() method which is a set list
         Tile[] tileList = Tile.tileListInit();
 
@@ -24,16 +18,14 @@ public class Main {
 
         String[] tileTexts = Language.tileTexts(stringList);
 
-        Dice dice1 = new Dice(0);
-        Dice dice2 = new Dice(0);
-        int sumOfDice;
+        Dice dice = new Dice(0);
+
 
         // Gui field initialized for use in everything related to the GUI
         GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(fields);
-        Player player1 = new Player(1000, 1, true, "Kat", false);
-        Player player2 = new Player(1000, 1, false, "Hund", false);
 
+        Player[]
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
         Player currentPlayer = new Player(0,0,false,"", false);
         GUI_Player gui_Player1 = Displaymanager.displayAddPlayer(gui, fields, player1.getPlayerName(), player1.getBalance(), true);

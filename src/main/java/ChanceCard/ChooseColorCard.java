@@ -107,7 +107,7 @@ public class ChooseColorCard extends ChanceCard{
 
             if(playerNum != 0){
                 currentPlayer.addBalance(-balanceChange);
-                players[playerNum].addBalance(balanceChange);
+                players[playerNum - 1].addBalance(balanceChange);
             }
 
         }
@@ -132,7 +132,7 @@ public class ChooseColorCard extends ChanceCard{
 
             if(playerNum != 0){
                 currentPlayer.addBalance(-balanceChange);
-                players[playerNum].addBalance(balanceChange);
+                players[playerNum - 1].addBalance(balanceChange);
             }
 
         }

@@ -19,10 +19,11 @@ public class Main {
         GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(stringList, fields);
 
-        Player currentPlayer = new Player(0,0,"", false, 0);
+        Player currentPlayer = new Player(0,0,"", false, 0, 0);
+
 
         do{
-            Displaymanager.initBoard(stringList, fields);
+
 
             // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
 
@@ -43,9 +44,19 @@ public class Main {
             do{
                 index = Player.nextPlayer(index, players);
                 currentPlayer = players[index];
-                dice.rollDice();
+                currentPlayer.saveLastPlayerPosition();
+                Displaymanager.rollScreen(gui, Displaymanager.displayPlayerTurn(stringList, players, currentPlayer), stringList.get("rollButton"));
+                Displaymanager.displayDice(gui, dice.rollDice());
                 currentPlayer.addPosition(dice.getFaceValue());
-                tileList[currentPlayer.getPosition()].tileAvailable(currentPlayer.getPlayerNum());
+                currentPlayer.addBalance(tileList[currentPlayer.getPosition()].tileAvailable(currentPlayer.getPlayerNum()));
+                Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+                currentPlayer.saveLastPlayerPosition();
+                if((currentPlayer.getPosition() == 3) || (currentPlayer.getPosition() == 9) || (currentPlayer.getPosition() == 15) || (currentPlayer.getPosition() == 21)){
+                    ChanceCardManager.drawCard(index,cards,currentPlayer);
+                }
+                Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+
+
 
 
             }while(true);

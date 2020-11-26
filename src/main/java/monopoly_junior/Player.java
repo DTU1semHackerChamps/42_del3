@@ -11,16 +11,18 @@ public class Player {
     private String playerName;
     private boolean jailCard;
     private int playerNum;
+    private int lastPlayerPosition;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
+    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum, int lastPlayerPosition){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
         this.playerName = playerName;
         this.playerNum = playerNum;
+        this.lastPlayerPosition = lastPlayerPosition;
 
     }
 
@@ -32,7 +34,12 @@ public class Player {
         this.playerNum = playerNum;
     }
 
+    public int getLastPlayerPosition(){return lastPlayerPosition;}
+    public void setLastPlayerPosition(int lastPlayerPosition){this.lastPlayerPosition = lastPlayerPosition;}
 
+    public void saveLastPlayerPosition(){
+        lastPlayerPosition = position;
+    }
 
 
     public void setJailCard(boolean jailCard) {
@@ -86,11 +93,12 @@ public class Player {
     public int addPosition(int faceValue){
        position += faceValue;
 
-       if(position > 12){
-            position -= 12;
+       if(position > 23){
+            position -= 23;
        }
        return position;
     }
+
 
 
     /**
@@ -155,11 +163,11 @@ public class Player {
             }while (playerName.equals(" "));
 
             switch (numOfPlayer){
-                case 2: players[i-1] = new Player(20,0,playerName,false, i);
+                case 2: players[i-1] = new Player(20,0,playerName,false, i, 0);
                     break;
-                case 3: players[i-1] = new Player(18,0,playerName,false, i);
+                case 3: players[i-1] = new Player(18,0,playerName,false, i, 0);
                     break;
-                case 4: players[i-1] = new Player(16,0,playerName,false, i);
+                case 4: players[i-1] = new Player(16,0,playerName,false, i, 0);
                     break;
             }
 

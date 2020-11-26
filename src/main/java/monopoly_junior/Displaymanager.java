@@ -28,9 +28,9 @@ public class Displaymanager {
      * @param dice2 face value of dice 2
      */
 
-    public static void displayDice(GUI gui,int dice1, int dice2){
+    public static void displayDice(GUI gui,int dice1){
         //gui.setDice(dice1,dice2);
-        gui.setDice(dice1,4,1,dice2,5,1);
+        gui.setDice(dice1,4,1,dice1,4,1);
 
 
     }
@@ -173,29 +173,18 @@ public class Displaymanager {
      * @param gui_Player1 The GUI_Player one used to change the car position
      * @param gui_Player2 The GUI_Player two used to change the car position
      */
-    public static void displayPosition(GUI_Field[] fields, int positionPlayer1, int positionPlayer2, GUI_Player gui_Player1, GUI_Player gui_Player2, int diceSum) throws InterruptedException {
+    public static void displayPosition(GUI_Field[] fields, Player currentPlayer, GUI_Player[] guiPlayer, int lastPlayerPosition) throws InterruptedException {
 
 
-//        for (int i = 0; i < 24; i++) {
-//
-//            fields[i].removeAllCars();
-//            fields[i].setCar(gui_Player1, false);
-//            fields[i].setCar(gui_Player2, false);
-//
-//        }
+        fields[lastPlayerPosition].setCar(guiPlayer[currentPlayer.getPlayerNum() - 1], false);
+        for (int j = lastPlayerPosition; j <= currentPlayer.getPlayerNum(); j++) {
 
-        fields[positionPlayer2].setCar(gui_Player2, true);
-        int lastPlayerPos = Math.abs(positionPlayer1 - diceSum);
-
-        fields[lastPlayerPos].setCar(gui_Player1, false);
-        for (int j = lastPlayerPos; j <= positionPlayer1; j++) {
-
-                fields[j].setCar(gui_Player1, true);
+                fields[j].setCar(guiPlayer[currentPlayer.getPlayerNum() - 1], true);
                 Thread.sleep(250);
-                fields[j].setCar(gui_Player1, false);
+                fields[j].setCar(guiPlayer[currentPlayer.getPlayerNum() - 1], false);
 
         }
-        fields[positionPlayer1].setCar(gui_Player1, true);
+        fields[currentPlayer.getPosition()].setCar(guiPlayer[currentPlayer.getPlayerNum() - 1], true);
     }
 
     /**
@@ -207,12 +196,17 @@ public class Displaymanager {
      * @return turn String including the name of the player
      */
 
-    public static String displayPlayerTurn(Boolean playerturn, HashMap<String,String> playerText, String player1name, String player2name){
-        String thisText;
-        if(playerturn){
-            thisText = player1name + " " + playerText.get("playerTurn");
-        } else {
-            thisText = player2name + " " + playerText.get("playerTurn");
+    public static String displayPlayerTurn(HashMap<String,String> playerText, Player[] players, Player currentPlayer){
+        String thisText = "";
+
+        switch (currentPlayer.getPlayerNum()){
+            case 1: thisText = players[0].getPlayerName() + " " + playerText.get("playerTurn");
+            break;
+            case 2: thisText = players[1].getPlayerName() + " " + playerText.get("playerTurn");
+            break;
+            case 3: thisText = players[2].getPlayerName() + " " + playerText.get("playerTurn");
+            break;
+            case 4: thisText = players[3].getPlayerName() + " " + playerText.get("playerTurn");
         }
         return thisText;
     }

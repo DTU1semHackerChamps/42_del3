@@ -101,7 +101,7 @@ You have eaten too much candy. PAY 2 monopoly money to the bank.
 ChanceCard8
 FREE PROPERTY! Move forward to ether a Orange or Green property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
 ChanceCard9
-FREE PROPERTY! Move forward to a Lightblue property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
+FREE PROPERTY! Move forward to a Light blue property. If it is available you get it for FREE! Otherwise you most pay rent to the owner.
 ChanceCard10
 You get out of jail without any expenses. Keep this card until you need it.
 ChanceCard11

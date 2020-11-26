@@ -31,6 +31,7 @@ public class ColorCard extends ChanceCard {
             owner1 = true;
 
         }
+
         if(tiles[Tile.goToColor(color) +1].getPropertyOwner() != 0){
             owner2 = true;
         }

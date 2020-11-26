@@ -21,59 +21,6 @@ public class Tile {
         this.propertyOwner = propertyOwner;
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-
-    public void setBalanceChange(int balanceChange) {
-        this.balanceChange = balanceChange;
-    }
-    public int getBalanceChange() {
-        return balanceChange;
-    }
-
-    public static int goToColor(int color){
-        int position;
-        position = 1+3*(color-1);
-        return position;
-    }
-
-    public int getPropertyOwner() {
-        return propertyOwner;
-    }
-
-    public void setPropertyOwner(int propertyOwner) {
-        this.propertyOwner = propertyOwner;
-    }
-
-    public int getBalanceChangeExtra(Tile[] tiles){
-        int newBalanceChange = balanceChange;
-        if(propertyOwner != 0){
-            for(int i = 1; i < tiles.length; i++){
-                if((tiles[i].getColor() == color) && (tiles[i].propertyOwner == tiles[i-1].propertyOwner)){
-                    newBalanceChange = balanceChange * 2;
-                }
-            }
-        }
-        return newBalanceChange;
-    }
-
-    public void tileAvailable(int currentPlayerNumber){
-        if(propertyOwner == 0){
-            propertyOwner = currentPlayerNumber;
-        }
-
-    }
-
-    public String getTileName() {
-        return tileName;
-    }
-
     /**
      * array of tile list
      * @return returns array of the specified initiated tiles
@@ -82,26 +29,26 @@ public class Tile {
     public static Tile [] tileListInit(HashMap<String, String> stringList){
         Tile [] tiles = new Tile[24];
         Tile start = new Tile (stringList.get("StartField"),2,0,0);
-        Tile theBurgerbar = new Tile (stringList.get("BurgerbarField"), -1,1,0);
-        Tile pizzeria = new Tile (stringList.get("PizzeriaField"), -1, 1,0);
+        Tile theBurgerbar = new Tile (stringList.get("BurgerbarField"), 1,1,0);
+        Tile pizzeria = new Tile (stringList.get("PizzeriaField"), 1, 1,0);
         Tile chanceCard = new Tile (stringList.get("ChanceCardField"), 0,0,0);
-        Tile candyStore = new Tile (stringList.get("CandyStoreField"), -1,2,0);
-        Tile iceCreamKiosk = new Tile (stringList.get("IceCreamField"), -1, 2,0);
+        Tile candyStore = new Tile (stringList.get("CandyStoreField"), 1,2,0);
+        Tile iceCreamKiosk = new Tile (stringList.get("IceCreamField"), 1, 2,0);
         Tile visitPrison = new Tile (stringList.get("VisitJailField"), 0,0,0);
-        Tile museum = new Tile (stringList.get("MuseumField"), -2,3,0);
-        Tile library = new Tile (stringList.get("LibraryField"), -2,3,0);
-        Tile skatepark = new Tile (stringList.get("SkateparkField"), -2,4,0);
-        Tile swimmingpool = new Tile (stringList.get("PoolField"),-2,4,0);
+        Tile museum = new Tile (stringList.get("MuseumField"), 2,3,0);
+        Tile library = new Tile (stringList.get("LibraryField"), 2,3,0);
+        Tile skatepark = new Tile (stringList.get("SkateparkField"), 2,4,0);
+        Tile swimmingpool = new Tile (stringList.get("PoolField"),2,4,0);
         Tile freeParking = new Tile (stringList.get("FreeparkingField"),0,0,0);
-        Tile arcade = new Tile (stringList.get("ArcadeField"), -3, 5,0);
-        Tile cinema = new Tile (stringList.get("CinemaField"), -3, 5,0);
-        Tile toyStore = new Tile (stringList.get("ToyStoreField"), -3,6,0);
-        Tile petShop = new Tile (stringList.get("PetShopField"), -3, 6,0);
+        Tile arcade = new Tile (stringList.get("ArcadeField"), 3, 5,0);
+        Tile cinema = new Tile (stringList.get("CinemaField"), 3, 5,0);
+        Tile toyStore = new Tile (stringList.get("ToyStoreField"), 3,6,0);
+        Tile petShop = new Tile (stringList.get("PetShopField"), 3, 6,0);
         Tile goPrison = new Tile (stringList.get("JailField"), 0, 0,0);
-        Tile bowlingAlley = new Tile (stringList.get("BowlingAlleyField"), -4,7,0);
-        Tile zoo = new Tile (stringList.get("ZooField"), -4, 7,0);
-        Tile waterPark = new Tile (stringList.get("WaterParkField"), -5, 8,0);
-        Tile boardwalk = new Tile (stringList.get("BoardwalkField"),-5, 8,0);
+        Tile bowlingAlley = new Tile (stringList.get("BowlingAlleyField"), 4,7,0);
+        Tile zoo = new Tile (stringList.get("ZooField"), 4, 7,0);
+        Tile waterPark = new Tile (stringList.get("WaterParkField"), 5, 8,0);
+        Tile boardwalk = new Tile (stringList.get("BoardwalkField"),5, 8,0);
 
         // no color 1
         // brown 2
@@ -140,4 +87,57 @@ public class Tile {
 
         return tiles;
     }
+
+    public int getColor() {
+        return color;
+    }
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setBalanceChange(int balanceChange) {
+        this.balanceChange = balanceChange;
+    }
+    public int getBalanceChange() {
+        return balanceChange;
+    }
+
+    public int getPropertyOwner() {
+        return propertyOwner;
+    }
+    public void setPropertyOwner(int propertyOwner) {
+        this.propertyOwner = propertyOwner;
+    }
+
+    public static int goToColor(int color){
+        int position;
+        position = 1+3*(color-1);
+        return position;
+    }
+
+    public int getBalanceChangeExtra(Tile[] tiles){
+        int newBalanceChange = balanceChange;
+        if(propertyOwner != 0){
+            for(int i = 1; i < tiles.length; i++){
+                if((tiles[i].getColor() == color) && (tiles[i].propertyOwner == tiles[i-1].propertyOwner)){
+                    newBalanceChange = balanceChange * 2;
+                }
+            }
+        }
+        return newBalanceChange;
+    }
+
+    public int tileAvailable(int currentPlayerNumber){
+        if(propertyOwner == 0){
+            propertyOwner = currentPlayerNumber;
+
+        }
+        return -balanceChange;
+    }
+
+    public String getTileName() {
+        return tileName;
+    }
+
+
 }

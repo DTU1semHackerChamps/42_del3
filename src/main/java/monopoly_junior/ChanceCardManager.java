@@ -54,10 +54,15 @@ public class ChanceCardManager {
 
     }
 
-    public static int drawCard(int index, ChanceCard[] chanceCards){
+    public static int drawCard(int index, ChanceCard[] chanceCards, Player currentPlayer){
+        for (int i = 0; i < chanceCards.length; i++) {
+            chanceCards[i].setCurrentPlayer(currentPlayer);
+        }
+
         index++;
 
         chanceCards[index].useChanceCard();
+
 
         if(index > 20){
             index = 0;

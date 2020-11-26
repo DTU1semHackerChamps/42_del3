@@ -169,8 +169,8 @@ public class Player {
     return players;
     }
 
-    public int nextPlayer(int index){
-        index = ++index % player.length;
+    public static int nextPlayer(int index, Player[] players){
+        index = ++index % players.length;
         return index;
     }
 

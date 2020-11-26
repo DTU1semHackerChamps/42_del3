@@ -44,10 +44,10 @@ public class Displaymanager {
      * for the tiles and the
      * background
      */
-    public static GUI initBoard(GUI_Field[] fields){
+    public static GUI initBoard(HashMap<String, String> stringList, GUI_Field[] fields){
 
         GUI.setNull_fields_allowed(true);
-        Tile[] tiles = Tile.tileListInit();
+        Tile[] tiles = Tile.tileListInit(stringList);
         String tileBalance, tileName;
         float H = 0, S = 0,B = 0;
 

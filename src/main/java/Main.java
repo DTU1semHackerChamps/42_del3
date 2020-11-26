@@ -15,16 +15,14 @@ public class Main {
 
         String[] tileTexts = Language.tileTexts(stringList);
 
-        Dice dice = new Dice(0);
-
         // Gui field initialized for use in everything related to the GUI
         GUI_Field[] fields = new GUI_Field[24];
-        GUI gui = Displaymanager.initBoard(fields);
+        GUI gui = Displaymanager.initBoard(stringList, fields);
 
         Player currentPlayer = new Player(0,0,"", false, 0);
 
         do{
-            Displaymanager.initBoard(fields);
+            Displaymanager.initBoard(stringList, fields);
 
             // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
 
@@ -34,12 +32,20 @@ public class Main {
 
 
             //tileList initialized with the tileListInit() method which is a set list
-            Tile[] tileList = Tile.tileListInit();
+            Tile[] tileList = Tile.tileListInit(stringList);
 
-            ChanceCard[] cards = ChanceCardManager.cardArrayInit(tileList, players, currentPlayer, gui);
+            ChanceCard[] cards = ChanceCardManager.cardArrayInit(stringList, tileList, players, currentPlayer, gui);
             ChanceCardManager.cardShuffle(cards);
 
+            Dice dice = new Dice(0);
+            int index = 0;
+
             do{
+                index = Player.nextPlayer(index, players);
+                currentPlayer = players[index];
+                dice.rollDice();
+                currentPlayer.addPosition(dice.getFaceValue());
+                tileList[currentPlayer.getPosition()].tileAvailable(currentPlayer.getPlayerNum());
 
 
             }while(true);

@@ -65,26 +65,29 @@ public class ChooseColorCard extends ChanceCard{
             if(ownerArray[1]) {
                 gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)].getTileName());
                 tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color1));
             }else{
                 gui.getUserButtonPressed("", tiles[Tile.goToColor(color1)+1].getTileName());
                 tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
-            }
+                currentPlayer.setPosition(Tile.goToColor(color1)+1);        }
 
         }
 
-        if(colorSelection && (ownerArray[2] ^ ownerArray[3])){
+        if(!colorSelection && (ownerArray[2] ^ ownerArray[3])){
 
             if(ownerArray[2]) {
                 gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)].getTileName());
                 tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color2));
             }else{
                 gui.getUserButtonPressed("", tiles[Tile.goToColor(color2)+1].getTileName());
                 tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color2)+1);
             }
 
         }
 
-        if(colorSelection && !ownerArray[0] && !ownerArray[1]){
+        if(colorSelection && ((!ownerArray[0] && !ownerArray[1]) || (ownerArray[0] && ownerArray[1]))){
 
             int playerNum = 0;
             int balanceChange;
@@ -93,11 +96,13 @@ public class ChooseColorCard extends ChanceCard{
                 playerNum = tiles[Tile.goToColor(color1)].getPropertyOwner();
                 balanceChange = tiles[Tile.goToColor(color1)].getBalanceChange();
                 tiles[Tile.goToColor(color1)].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color1));
             }
             else{
                 playerNum = tiles[Tile.goToColor(color1)+1].getPropertyOwner();
                 balanceChange = tiles[Tile.goToColor(color1)+1].getBalanceChange();
                 tiles[Tile.goToColor(color1)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color1)+1);
             }
 
             if(playerNum != 0){
@@ -107,7 +112,7 @@ public class ChooseColorCard extends ChanceCard{
 
         }
 
-        if(colorSelection && !ownerArray[2] && !ownerArray[3]){
+        if(!colorSelection && ((!ownerArray[2] && !ownerArray[3]) || (ownerArray[2] && ownerArray[3]))){
 
             int playerNum = 0;
             int balanceChange;
@@ -116,11 +121,13 @@ public class ChooseColorCard extends ChanceCard{
                 playerNum = tiles[Tile.goToColor(color2)].getPropertyOwner();
                 balanceChange = tiles[Tile.goToColor(color2)].getBalanceChange();
                 tiles[Tile.goToColor(color2)].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color2));
             }
             else{
                 playerNum = tiles[Tile.goToColor(color2)+1].getPropertyOwner();
                 balanceChange = tiles[Tile.goToColor(color2)+1].getBalanceChange();
                 tiles[Tile.goToColor(color2)+1].setPropertyOwner(currentPlayer.getPlayerNum());
+                currentPlayer.setPosition(Tile.goToColor(color2)+1);
             }
 
             if(playerNum != 0){

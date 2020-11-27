@@ -136,43 +136,54 @@ public class Player {
     }
 
     public static void whoWon(boolean lost, Player[] players, Tile[] tiles,HashMap<String,String> stringList, GUI gui){
-        int[] balance = new int[players.length];
+        int[][] balance = new int[players.length][2];
         boolean [] winners = new boolean[players.length];
-        int lastBalance = 0;
+        int highBalance = 0;
+        int highBalance2 = 0;
+        int winner = 0;
 
-        for(int i = 0; i < players.length; i++){
-            balance[i] = players[i].getBalance();
-        }
-        HashMap<String, Integer>
-        Arrays.sort(balance);
-
-        for(int i = balance.length - 1; i >= 0; i--) {
-            if (lastBalance > balance[i]) {
-                break;
-            }
-            winners[i] = true;
-            lastBalance = balance[i];
-        }
-
-        int[] playerPropertyBalances = new int[winners.length];
+        int[] playerPropertyBalances = new int[players.length];
 
         for(int i = 0; i < tiles.length; i++){
             switch(tiles[i].getPropertyOwner()){
                 case 1: playerPropertyBalances[1] += tiles[i].getBalanceChange();
-                break;
+                    break;
                 case 2: playerPropertyBalances[2] += tiles[i].getBalanceChange();
-                break;
+                    break;
                 case 3: playerPropertyBalances[3] += tiles[i].getBalanceChange();
-                break;
+                    break;
                 case 4: playerPropertyBalances[4] += tiles[i].getBalanceChange();
-                break;
+                    break;
             }
         }
 
-        Arrays.sort(playerPropertyBalances);
+        for (int i = 0; i < players.length; i++) {
+            if(players[i].getBalance() > highBalance) {
+                highBalance = players[i].getBalance();
+            }
+        }
 
-        gui.showMessage("Player " + playerPropertyBalances[playerPropertyBalances.length-1] + " " + stringList.get("Player"));
+        for(int i = 0; i < players.length; i++){
+            balance[i][1] = players[i].getBalance();
+            balance[i][2] = i + 1;
+            if(highBalance == balance[i][1]){
+                winners[balance[i][2]-1] = true;
+            }
+        }
 
+
+        for (int i = 0; i < players.length; i++) {
+            if(winners[i]){
+                if(playerPropertyBalances[i] > highBalance2){
+                    winner = i + 1;
+                    highBalance2 = playerPropertyBalances[i];
+                }
+            }
+        }
+
+        Arrays.sort(balance);
+
+        gui.showMessage("Player " + winner + " " + stringList.get("winScreenMessage"));
     }
 
 

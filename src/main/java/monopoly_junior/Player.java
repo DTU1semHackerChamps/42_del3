@@ -115,14 +115,16 @@ public class Player {
             } else {
                 balance -= 1;
             }
+            inPrison = false;
         }
     }
 
-    public void goToPrison(){
+    public boolean goToPrison(){
         if(position == 18){
             position = 6;
             inPrison = true;
         }
+        return inPrison;
     }
 
     public static boolean lost (Player[] players){
@@ -135,7 +137,7 @@ public class Player {
         return lostCheck;
     }
 
-    public static void whoWon(boolean lost, Player[] players, Tile[] tiles,HashMap<String,String> stringList, GUI gui){
+    public static boolean whoWon(Player[] players, Tile[] tiles,HashMap<String,String> stringList, GUI gui){
         int[][] balance = new int[players.length][2];
         boolean [] winners = new boolean[players.length];
         int highBalance = 0;
@@ -183,7 +185,7 @@ public class Player {
 
         Arrays.sort(balance);
 
-        gui.showMessage("Player " + winner + " " + stringList.get("winScreenMessage"));
+        return gui.getUserLeftButtonPressed("Player " + winner + " " + stringList.get("winScreenMessage"),stringList.get("winTrueButton"),stringList.get("winFalseButton"));
     }
 
 

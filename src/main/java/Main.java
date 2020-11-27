@@ -13,8 +13,6 @@ public class Main {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("english");
 
-        String[] tileTexts = Language.tileTexts(stringList);
-
         // Gui field initialized for use in everything related to the GUI
         GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(stringList, fields);
@@ -44,27 +42,35 @@ public class Main {
             do{
                 index = Player.nextPlayer(index, players);
                 currentPlayer = players[index];
+                currentPlayer.prison();
                 currentPlayer.saveLastPlayerPosition();
                 Displaymanager.rollScreen(gui, Displaymanager.displayPlayerTurn(stringList, players, currentPlayer), stringList.get("rollButton"));
                 Displaymanager.displayDice(gui, dice.rollDice());
                 currentPlayer.addPosition(dice.getFaceValue());
+
+                Displaymanager.goToPrisonMessage(currentPlayer.goToPrison(), stringList, gui, currentPlayer);
                 currentPlayer.addBalance(tileList[currentPlayer.getPosition()].tileAvailable(currentPlayer.getPlayerNum()));
                 Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+                Displaymanager.displayTileText(stringList, gui, tileList,currentPlayer);
                 Displaymanager.updatePlayerBalance(gui, gui_Players, players);
                 Displaymanager.updatePropertyOwners(gui,fields,tileList,players);
                 currentPlayer.saveLastPlayerPosition();
                 if((currentPlayer.getPosition() == 3) || (currentPlayer.getPosition() == 9) || (currentPlayer.getPosition() == 15) || (currentPlayer.getPosition() == 21)){
                     ChanceCardManager.drawCard(index,cards,currentPlayer);
+
+                    Displaymanager.goToPrisonMessage(currentPlayer.goToPrison(), stringList, gui, currentPlayer);
                 }
                 Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
+                Displaymanager.displayTileText(stringList, gui, tileList,currentPlayer);
                 Displaymanager.updatePlayerBalance(gui, gui_Players, players);
                 Displaymanager.updatePropertyOwners(gui,fields,tileList,players);
-
-
-
-
-
-
+                if(Player.lost(players)) {
+                    if(Player.whoWon(players,tileList,stringList,gui)){
+                        break;
+                    } else {
+                        System.exit(0);
+                    }
+                }
             }while(true);
 
         }while(true);

@@ -155,26 +155,6 @@ public class Displaymanager {
     }
 
     /**
-     * The pop up when a player wins.
-     * @param gui Current GUI
-     * @param winScreenMessage The message displayed in the top left
-     * @param winTrueButton True button text
-     * @param winFalseButton false button text in this case it closes the program.
-     * @return Returns a boolean true or false. In the case used to continue the do while loop
-     */
-
-    public static boolean winScreen(GUI gui, String winScreenMessage, String winTrueButton, String winFalseButton){
-        boolean buttonPress = false;
-
-       buttonPress = gui.getUserLeftButtonPressed(winScreenMessage, winTrueButton, winFalseButton);
-       if(!buttonPress){
-           System.exit(0);
-       }
-
-        return buttonPress;
-    }
-
-    /**
      * Displays both players current position on the board.
      * @param fields The fields [] array for the fields on the board
      * @param positionPlayer1 Position of player 1
@@ -229,24 +209,6 @@ public class Displaymanager {
         return thisText;
     }
 
-    /**
-     * Returns a string with the name of the player who has won it is.
-     * @param playerturn Checks who's turn it is, if true player 1 if false player 2.
-     * @param playerText The text displayed after the players name.
-     * @param player1name Name of player 1.
-     * @param player2name Name of player 2.
-     * @return win String including the name of the player.
-     */
-    public static String displayPlayerWin(Boolean playerturn, HashMap<String,String> playerText, String player1name, String player2name){
-        String thisText;
-        if(playerturn){
-            thisText = player1name + " " + playerText.get("playerWin");
-        } else {
-            thisText = player2name + " " + playerText.get("playerWin");
-        }
-        return thisText;
-    }
-
     public static void  updatePlayerBalance(GUI gui, GUI_Player[] guiPlayer, Player[] players){
         for (int i = 0; i < players.length; i++) {
             guiPlayer[i].setBalance(players[i].getBalance());
@@ -266,6 +228,12 @@ public class Displaymanager {
 
      }
 
+     public static void goToPrisonMessage(boolean goToPrison, HashMap<String,String> stringList, GUI gui, Player currentPlayer){
+        if(goToPrison){
+            gui.showMessage(currentPlayer.getPlayerName() + " " + stringList.get("GoToJailField"));
+        }
+     }
+
     /**
      * Used to display the tile text of the current position after a roll.
      * @param tileTexts String[] with the texts of the tiles
@@ -273,8 +241,9 @@ public class Displaymanager {
      * @param gui the gui currently used
      */
 
-    public static void displayTileText(String[] tileTexts, int position, GUI gui){
-        gui.showMessage(tileTexts[position]);
+    public static void displayTileText(HashMap<String, String> stringList, GUI gui, Tile[] tiles, Player currentPlayer){
+        if(currentPlayer.getPosition() != currentPlayer.getLastPlayerPosition())
+            gui.showMessage(stringList.get("basisText1") + " " + tiles[currentPlayer.getPosition()].getTileName());
     }
 
 

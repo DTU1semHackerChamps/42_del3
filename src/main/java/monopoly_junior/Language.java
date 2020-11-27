@@ -40,18 +40,6 @@ public class Language {
         return langList;
     }
 
-    /**
-     * Returns an array that loads the tileTextx lines from the HashMap into an array.
-     * @param stringList HashMap containing language strings
-     * @return Returns a String[] of the tiletexts.
-     */
 
-    public static String[] tileTexts(HashMap<String, String> stringList){
-        String[] tileText = new String[13];
-        for (int i = 1 ; i < 13; i++) {
-            tileText[i] = stringList.get("tileText"+i);
-        }
-        return tileText;
-    }
 
 }

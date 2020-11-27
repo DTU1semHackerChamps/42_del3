@@ -10,12 +10,13 @@ public class Player {
     private int position;
     private String playerName;
     private boolean jailCard;
+    private boolean inPrison;
     private int playerNum;
     private int lastPlayerPosition;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum, int lastPlayerPosition){
+    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum, int lastPlayerPosition, boolean inPrison){
 
         this.balance = balance;
         this.position = position;
@@ -23,6 +24,7 @@ public class Player {
         this.playerName = playerName;
         this.playerNum = playerNum;
         this.lastPlayerPosition = lastPlayerPosition;
+        this.inPrison = inPrison;
 
     }
 
@@ -77,8 +79,11 @@ public class Player {
         return balance;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setPosition(int newPosition) {
+        if(position > newPosition){
+            balance += 2;
+        }
+        position = newPosition;
     }
 
     public int getPosition() {
@@ -95,8 +100,28 @@ public class Player {
 
        if(position > 23){
             position -= 24;
+            balance += 2;
        }
+
+
        return position;
+    }
+
+    public void prison(){
+        if(inPrison){
+            if(jailCard){
+                jailCard = false;
+            } else {
+                balance -= 1;
+            }
+        }
+    }
+
+    public void goToPrison(){
+        if(position == 18){
+            position = 6;
+            inPrison = true;
+        }
     }
 
 
@@ -163,11 +188,11 @@ public class Player {
             }while (playerName.equals(" "));
 
             switch (numOfPlayer){
-                case 2: players[i-1] = new Player(20,0,playerName,false, i, 0);
+                case 2: players[i-1] = new Player(20,0,playerName,false, i, 0, false);
                     break;
-                case 3: players[i-1] = new Player(18,0,playerName,false, i, 0);
+                case 3: players[i-1] = new Player(18,0,playerName,false, i, 0, false);
                     break;
-                case 4: players[i-1] = new Player(16,0,playerName,false, i, 0);
+                case 4: players[i-1] = new Player(16,0,playerName,false, i, 0, false);
                     break;
             }
 

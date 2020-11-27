@@ -19,7 +19,7 @@ public class Main {
         GUI_Field[] fields = new GUI_Field[24];
         GUI gui = Displaymanager.initBoard(stringList, fields);
 
-        Player currentPlayer = new Player(0,0,"", false, 0, 0);
+        Player currentPlayer = new Player(0,0,"", false, 0, 0, false);
 
 
         do{
@@ -59,6 +59,7 @@ public class Main {
                 Displaymanager.displayPosition(fields, currentPlayer, gui_Players, currentPlayer.getLastPlayerPosition());
                 Displaymanager.updatePlayerBalance(gui, gui_Players, players);
                 Displaymanager.updatePropertyOwners(gui,fields,tileList,players);
+
 
 
 

@@ -206,23 +206,6 @@ public class Player {
     }
 
 
-
-    // From here new code added by Zahed.
-
-
-//    private boolean isDeath;
-//    private boolean isWinner;
-
-//    public  void PlayerSartPos(){
-//        balance = 0;
-//        isDeath = false;
-//        isWinner = false;
-//
-//
-//    }
-
-     String[] player;
-
     public static Player[] PlayerList(HashMap<String, String> stringList, GUI gui){
         String playerName = "";
         int numOfPlayer = 0;

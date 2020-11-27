@@ -50,14 +50,15 @@ public class Tile {
         Tile waterPark = new Tile (stringList.get("WaterParkField"), 5, 8,0);
         Tile boardwalk = new Tile (stringList.get("BoardwalkField"),5, 8,0);
 
-        // no color 1
-        // brown 2
-        // lightBlue 3
-        // pink 4
-        // orange 5
-        // red 6
-        // gold 7
-        // green 8
+        // no color 0
+        // brown 1
+        // lightBlue 2
+        // pink 3
+        // orange 4
+        // red 5
+        // gold 6
+        // green 7
+        // blue 8
 
         tiles[0] = start;
         tiles[1] = theBurgerbar;
@@ -109,12 +110,22 @@ public class Tile {
         this.propertyOwner = propertyOwner;
     }
 
+    /**
+     * Makes the player got to the chosen color on the board.
+     * @param color Color number
+     * @return New position for player on a colored tile
+     */
     public static int goToColor(int color){
         int position;
         position = 1+3*(color-1);
         return position;
     }
 
+    /**
+     * Doubles the rent of a tile, if both tiles are owned by the same player.
+     * @param tiles The array of tiles
+     * @return The rent of the property
+     */
     public int getBalanceChangeExtra(Tile[] tiles){
         int newBalanceChange = balanceChange;
         if(propertyOwner != 0){
@@ -127,6 +138,12 @@ public class Tile {
         return newBalanceChange;
     }
 
+    /**
+     * Checks if the property the player landed on is owned by another player. If the tile is not owned,
+     * The player will buy the property
+     * @param currentPlayerNumber The player number of the current player
+     * @return A negative balance change
+     */
     public int tileAvailable(int currentPlayerNumber){
         if(propertyOwner == 0){
             propertyOwner = currentPlayerNumber;

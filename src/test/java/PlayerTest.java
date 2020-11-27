@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class PlayerTest {
 
-    Player player = new Player(0,0, "", false,0);
+    Player player = new Player(0,0, "", false,0,0, false);
     Dice dice = new Dice(0);
 
     @Test
@@ -29,10 +29,6 @@ public class PlayerTest {
         assertTrue(player.getJailCard() == true);
     }
 
-
-    @Test
-    public void isJailCard() {
-    }
 
     @Test
     public void setBalance() {
@@ -69,10 +65,6 @@ public class PlayerTest {
         assertTrue(player.getPosition() == 4);
     }
 
-//    @Test
-//    public void addPosition() {
-//        player.setPosition(dice.rollDice());
-//    }
 
 
     @Test
@@ -81,33 +73,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void playerList() {
-        player.playerList(3);
-        player.player[0] = "Mads";
-        player.player[1] = "Christ";
-        player.player[2] = "Magnus";
+    public void PlayerList() {
 
-        assertTrue(player.player[0] == "Mads");
-        assertTrue(player.player[1] == "Christ");
-        assertTrue(player.player[2] == "Magnus");
     }
-
 
     @Test
     public void nextPlayer() {
-        player.playerList(3);
-        assertTrue(player.nextPlayer(3) == 1);
-
-
-        player.playerList(10);
-        assertTrue(player.nextPlayer(32) == 3);
-
-
-        player.playerList(1);
-        assertTrue(player.nextPlayer(1) == 0);
-
-
-
 
 
     }

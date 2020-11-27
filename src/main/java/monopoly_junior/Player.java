@@ -49,6 +49,10 @@ public class Player {
         this.jailCard = jailCard;
     }
 
+    public boolean getJailCard() {
+        return jailCard;
+    }
+
     public boolean isJailCard() {
         return jailCard;
     }

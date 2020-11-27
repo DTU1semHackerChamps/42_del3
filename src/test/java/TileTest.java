@@ -13,10 +13,10 @@ public class TileTest {
     @org.junit.jupiter.api.Test
     void tileListInit() throws IOException {
         HashMap<String, String> stringList = Language.languageInit("english");
-        Tile[] tilesTest = new Tile[12];
-        tilesTest = Tile.tileListInit(stringList);
-        assertEquals(2,tilesTest[1].getBalanceChange());
-        assertEquals(-100,tilesTest[2].getBalanceChange());
+        Tile[] tilesTest = Tile.tileListInit(stringList);
+        assertEquals(1,tilesTest[1].getBalanceChange());
+        assertNotEquals(-100,tilesTest[2].getBalanceChange());
+
 
 
     }

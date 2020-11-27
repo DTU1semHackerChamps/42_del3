@@ -9,7 +9,7 @@ PLAY
 startFalseButton
 EXIT
 winScreenMessage
-You have won the game! Press 'RESTART' or 'EXIT'
+have won the game! Press 'RESTART' or 'EXIT'
 winTrueButton
 RESTART
 winFalseButton

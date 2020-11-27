@@ -3,6 +3,7 @@ package monopoly_junior;
 import ChanceCard.JailCard;
 import gui_main.GUI;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Player {
@@ -123,6 +124,57 @@ public class Player {
             inPrison = true;
         }
     }
+
+    public static boolean lost (Player[] players){
+        boolean lostCheck = false;
+        for(int i = 0; i < players.length; i++){
+            if(players[i].getBalance() <= 0){
+                lostCheck = true;
+            }
+        }
+        return lostCheck;
+    }
+
+    public static void whoWon(boolean lost, Player[] players, Tile[] tiles,HashMap<String,String> stringList, GUI gui){
+        int[] balance = new int[players.length];
+        boolean [] winners = new boolean[players.length];
+        int lastBalance = 0;
+
+        for(int i = 0; i < players.length; i++){
+            balance[i] = players[i].getBalance();
+        }
+        HashMap<String, Integer>
+        Arrays.sort(balance);
+
+        for(int i = balance.length - 1; i >= 0; i--) {
+            if (lastBalance > balance[i]) {
+                break;
+            }
+            winners[i] = true;
+            lastBalance = balance[i];
+        }
+
+        int[] playerPropertyBalances = new int[winners.length];
+
+        for(int i = 0; i < tiles.length; i++){
+            switch(tiles[i].getPropertyOwner()){
+                case 1: playerPropertyBalances[1] += tiles[i].getBalanceChange();
+                break;
+                case 2: playerPropertyBalances[2] += tiles[i].getBalanceChange();
+                break;
+                case 3: playerPropertyBalances[3] += tiles[i].getBalanceChange();
+                break;
+                case 4: playerPropertyBalances[4] += tiles[i].getBalanceChange();
+                break;
+            }
+        }
+
+        Arrays.sort(playerPropertyBalances);
+
+        gui.showMessage("Player " + playerPropertyBalances[playerPropertyBalances.length-1] + " " + stringList.get("Player"));
+
+    }
+
 
 
 

@@ -154,14 +154,6 @@ public class Displaymanager {
         return guiPlayerList;
     }
 
-    /**
-     * Displays both players current position on the board.
-     * @param fields The fields [] array for the fields on the board
-     * @param positionPlayer1 Position of player 1
-     * @param positionPlayer2 Position of player 2
-     * @param gui_Player1 The GUI_Player one used to change the car position
-     * @param gui_Player2 The GUI_Player two used to change the car position
-     */
 
     /**
      * Displays all players position on the board

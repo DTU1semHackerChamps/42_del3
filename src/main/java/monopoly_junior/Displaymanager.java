@@ -25,7 +25,6 @@ public class Displaymanager {
      * Displays the current dice values in GUI
      * @param gui the current GUI
      * @param dice1 face value of dice 1
-     * @param dice2 face value of dice 2
      */
 
     public static void displayDice(GUI gui,int dice1){
@@ -36,13 +35,13 @@ public class Displaymanager {
     }
 
     /**
-     * This method initializes and has a randomized color setting for the tiles and and bg.
-     * It also uses an if statement to translate the index of one array of 12 to an array of 16 with
-     * spaces at index 0 4 8 12
-     * @param fields is the current GUI_Field []
-     * @return Returns gui with monopoly_junior.Tile names, monopoly_junior.Tile balance and random colors
-     * for the tiles and the
-     * background
+     * This method initializes the board and has switch case that determines the color of the tile.
+     * It also has an if statement that checks for tiles with 0 rent and removes the subtext,
+     * and a special one for the prison/visit prison.
+     * @param stringList is the names of the tiles taken form a list of strings in the Language class.
+     * @param fields is the current GUI_Field[]
+     * @return Returns gui with monopoly_junior.Tile names, monopoly_junior.Tile balance
+     * and specific colors for the tiles and background
      */
     public static GUI initBoard(HashMap<String, String> stringList, GUI_Field[] fields){
 
@@ -119,6 +118,7 @@ public class Displaymanager {
 
     /**
      * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player
+     * @param stringList is the names of the characters taken form a list of strings
      * @param gui The current GUI
      * @param fields The current GUI_Field[]
      * @param player The name displayed in the GUI by the score
@@ -181,6 +181,15 @@ public class Displaymanager {
      * @param positionPlayer2 Position of player 2
      * @param gui_Player1 The GUI_Player one used to change the car position
      * @param gui_Player2 The GUI_Player two used to change the car position
+     */
+
+    /**
+     * Displays all players position on the board
+     * @param fields The fields [] array for the fields on the board
+     * @param currentPlayer is the player turn
+     * @param guiPlayer is the GUI_Player[]
+     * @param lastPlayerPosition position of the player before the dice roll
+     * @throws InterruptedException Can interrupt even if the sleep timer is not done
      */
     public static void displayPosition(GUI_Field[] fields, Player currentPlayer, GUI_Player[] guiPlayer, int lastPlayerPosition) throws InterruptedException {
 

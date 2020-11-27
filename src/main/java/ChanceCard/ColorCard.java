@@ -70,7 +70,7 @@ public class ColorCard extends ChanceCard {
         }
 
         if(playerNum != 0) {
-            players[playerNum].addBalance(balanceChange);
+            players[playerNum-1].addBalance(balanceChange);
             currentPlayer.addBalance(-balanceChange);
 
         }

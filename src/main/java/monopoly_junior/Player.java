@@ -148,13 +148,13 @@ public class Player {
 
         for(int i = 0; i < tiles.length; i++){
             switch(tiles[i].getPropertyOwner()){
-                case 1: playerPropertyBalances[1] += tiles[i].getBalanceChange();
+                case 1: playerPropertyBalances[0] += tiles[i].getBalanceChange();
                     break;
-                case 2: playerPropertyBalances[2] += tiles[i].getBalanceChange();
+                case 2: playerPropertyBalances[1] += tiles[i].getBalanceChange();
                     break;
-                case 3: playerPropertyBalances[3] += tiles[i].getBalanceChange();
+                case 3: playerPropertyBalances[2] += tiles[i].getBalanceChange();
                     break;
-                case 4: playerPropertyBalances[4] += tiles[i].getBalanceChange();
+                case 4: playerPropertyBalances[3] += tiles[i].getBalanceChange();
                     break;
             }
         }
@@ -166,10 +166,10 @@ public class Player {
         }
 
         for(int i = 0; i < players.length; i++){
-            balance[i][1] = players[i].getBalance();
-            balance[i][2] = i + 1;
-            if(highBalance == balance[i][1]){
-                winners[balance[i][2]-1] = true;
+            balance[i][0] = players[i].getBalance();
+            balance[i][1] = i + 1;
+            if(highBalance == balance[i][0]){
+                winners[balance[i][1]-1] = true;
             }
         }
 
@@ -183,13 +183,8 @@ public class Player {
             }
         }
 
-        Arrays.sort(balance);
-
         return gui.getUserLeftButtonPressed("Player " + winner + " " + stringList.get("winScreenMessage"),stringList.get("winTrueButton"),stringList.get("winFalseButton"));
     }
-
-
-
 
     /**
      * Checks if winning requirement is reached

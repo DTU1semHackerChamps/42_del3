@@ -25,10 +25,15 @@ public class Language {
             default: path = Paths.get("English.txt");
         }
         BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(path.toAbsolutePath())));
+        BufferedReader lineReader = new BufferedReader(new FileReader(String.valueOf(path.toAbsolutePath())));
+
+        int lines = 0;
+
+        while(lineReader.readLine() !=null) lines++;
 
         HashMap<String, String> langList = new HashMap<>();
 
-        for (int i = 0; i < 71; i++) {
+        for (int i = 0; i < lines; i++) {
             langList.put(reader.readLine(), reader.readLine());
 
         }
